@@ -281,3 +281,144 @@ window.addEventListener('error', (e) => {
 window.loadPage = loadPage;
 window.scrollToSection = scrollToSection;
 window.toggleMobileDropdown = toggleMobileDropdown;
+
+
+// Gallery functionality
+let currentImageIndex = 0
+let currentImages = []
+
+function filterGallery(category) {
+  const items = document.querySelectorAll(".gallery-item")
+  const buttons = document.querySelectorAll(".gallery-filter-btn")
+
+  // Update active button
+  buttons.forEach((btn) => btn.classList.remove("active"))
+  event.target.classList.add("active")
+
+  // Filter items
+  items.forEach((item) => {
+    const itemCategory = item.getAttribute("data-category")
+
+    if (category === "all" || itemCategory === category) {
+      item.style.display = "block"
+      setTimeout(() => {
+        item.style.opacity = "1"
+        item.style.transform = "scale(1)"
+      }, 100)
+    } else {
+      item.style.opacity = "0"
+      item.style.transform = "scale(0.8)"
+      setTimeout(() => {
+        item.style.display = "none"
+      }, 300)
+    }
+  })
+}
+
+function openLightbox(imageSrc, title, description) {
+  const modal = document.getElementById("lightboxModal")
+  const image = document.getElementById("lightboxImage")
+  const titleEl = document.getElementById("lightboxTitle")
+  const descEl = document.getElementById("lightboxDescription")
+
+  // Get all visible images for navigation
+  const visibleItems = Array.from(document.querySelectorAll(".gallery-item")).filter(
+    (item) => item.style.display !== "none",
+  )
+
+  currentImages = visibleItems.map((item) => ({
+    src: item.onclick.toString().match(/openLightbox\('([^']+)'/)[1],
+    title: item.onclick.toString().match(/openLightbox\('[^']+',\s*'([^']+)'/)[1],
+    description: item.onclick.toString().match(/openLightbox\('[^']+',\s*'[^']+',\s*'([^']+)'/)[1],
+  }))
+
+  currentImageIndex = currentImages.findIndex((img) => img.src === imageSrc)
+
+  image.src = imageSrc
+  titleEl.textContent = title
+  descEl.textContent = description
+
+  modal.classList.remove("hidden")
+  document.body.style.overflow = "hidden"
+}
+
+function closeLightbox() {
+  const modal = document.getElementById("lightboxModal")
+  modal.classList.add("hidden")
+  document.body.style.overflow = "auto"
+}
+
+function previousImage() {
+  if (currentImages.length > 0) {
+    currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length
+    const img = currentImages[currentImageIndex]
+
+    document.getElementById("lightboxImage").src = img.src
+    document.getElementById("lightboxTitle").textContent = img.title
+    document.getElementById("lightboxDescription").textContent = img.description
+  }
+}
+
+function nextImage() {
+  if (currentImages.length > 0) {
+    currentImageIndex = (currentImageIndex + 1) % currentImages.length
+    const img = currentImages[currentImageIndex]
+
+    document.getElementById("lightboxImage").src = img.src
+    document.getElementById("lightboxTitle").textContent = img.title
+    document.getElementById("lightboxDescription").textContent = img.description
+  }
+}
+
+function showNotification(message, type) {
+  alert(message) // Replace with a more sophisticated notification system if needed
+}
+
+function loadMoreImages() {
+  // In a real implementation, this would load more images from server
+  showNotification("Fitur load more akan segera tersedia!", "info")
+}
+
+// Add CSS for gallery filter buttons
+document.addEventListener("DOMContentLoaded", () => {
+  // Add styles for gallery filter buttons
+  const style = document.createElement("style")
+  style.textContent = `
+    .gallery-filter-btn {
+      background-color: #f3f4f6;
+      color: #6b7280;
+      border: 1px solid #d1d5db;
+    }
+    
+    .gallery-filter-btn.active {
+      background-color: #1f2937;
+      color: white;
+      border-color: #1f2937;
+    }
+    
+    .gallery-filter-btn:hover {
+      background-color: #e5e7eb;
+    }
+    
+    .gallery-filter-btn.active:hover {
+      background-color: #374151;
+    }
+    
+    .gallery-item {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+  `
+  document.head.appendChild(style)
+})
+
+// Expose new functions
+window.searchArticles = searchArticles
+window.filterByCategory = filterByCategory
+window.openArticleModal = openArticleModal
+window.closeArticleModal = closeArticleModal
+window.filterGallery = filterGallery
+window.openLightbox = openLightbox
+window.closeLightbox = closeLightbox
+window.previousImage = previousImage
+window.nextImage = nextImage
+window.loadMoreImages = loadMoreImages
