@@ -1,0 +1,249 @@
+<section class="py-20 bg-gradient-to-br from-krem-50 to-white">
+  <div class="container mx-auto px-4 md:px-8">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-serif text-gray-800 mb-6">Galeri</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Dokumentasi kegiatan, fasilitas kantor, dan momen-momen penting dalam perjalanan pelayanan kami.
+      </p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="flex flex-wrap justify-center gap-4 mb-12">
+      <button onclick="filterGallery('all')" class="gallery-filter-btn active px-6 py-3 rounded-full font-medium transition duration-300">
+        Semua
+      </button>
+      <button onclick="filterGallery('kantor')" class="gallery-filter-btn px-6 py-3 rounded-full font-medium transition duration-300">
+        Kantor
+      </button>
+      <button onclick="filterGallery('kegiatan')" class="gallery-filter-btn px-6 py-3 rounded-full font-medium transition duration-300">
+        Kegiatan
+      </button>
+      <button onclick="filterGallery('sertifikat')" class="gallery-filter-btn px-6 py-3 rounded-full font-medium transition duration-300">
+        Sertifikat
+      </button>
+      <button onclick="filterGallery('tim')" class="gallery-filter-btn px-6 py-3 rounded-full font-medium transition duration-300">
+        Tim
+      </button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      
+      <!-- Kantor Photos -->
+      <div class="gallery-item" data-category="kantor" onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Ruang Tunggu Kantor', 'Ruang tunggu yang nyaman untuk klien dengan fasilitas lengkap')">
+        <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/tim_kami.jpg" alt="Ruang Tunggu" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="text-white font-medium">Ruang Tunggu Kantor</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="kantor" onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Ruang Kerja Notaris', 'Ruang kerja yang profesional dan nyaman untuk pelayanan notaris')">
+        <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/tim_kami.jpg" alt="Ruang Kerja" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="text-white font-medium">Ruang Kerja Notaris</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="kantor" onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Ruang Meeting', 'Ruang meeting untuk konsultasi dan pertemuan dengan klien')">
+        <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/tim_kami.jpg" alt="Ruang Meeting" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="text-white font-medium">Ruang Meeting</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="kantor" onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Fasad Kantor', 'Tampak depan kantor notaris yang mudah diakses')">
+        <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/tim_kami.jpg" alt="Fasad Kantor" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="text-white font-medium">Fasad Kantor</h3>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Kegiatan Photos -->
+      <div class="gallery-item" data-category="kegiatan" onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Penandatanganan Akta', 'Proses penandatanganan akta dengan klien')">
+        <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="/placeholder.svg?height=300&width=400" alt="Penandatanganan" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="text-white font-medium">Penandatanganan Akta</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="kegiatan" onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Konsultasi Klien', 'Sesi konsultasi dengan klien di ruang meeting')">
+        <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="/placeholder.svg?height=300&width=400" alt="Konsultasi" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="text-white font-medium">Konsultasi Klien</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="kegiatan" onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Seminar Hukum', 'Kegiatan seminar hukum untuk masyarakat')">
+        <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="/placeholder.svg?height=300&width=400" alt="Seminar" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="text-white font-medium">Seminar Hukum</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sertifikat Photos -->
+      <div class="gallery-item" data-category="sertifikat" onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Sertifikat Notaris', 'Sertifikat resmi sebagai Notaris')">
+        <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="/placeholder.svg?height=300&width=400" alt="Sertifikat Notaris" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="text-white font-medium">Sertifikat Notaris</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="sertifikat" onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Sertifikat PPAT', 'Sertifikat resmi sebagai PPAT')">
+        <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="/placeholder.svg?height=300&width=400" alt="Sertifikat PPAT" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="text-white font-medium">Sertifikat PPAT</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="sertifikat" onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Penghargaan', 'Penghargaan dari organisasi profesi')">
+        <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="/placeholder.svg?height=300&width=400" alt="Penghargaan" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="text-white font-medium">Penghargaan</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tim Photos -->
+      <div class="gallery-item" data-category="tim" onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Tim Kantor', 'Foto bersama seluruh tim kantor')">
+        <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="/placeholder.svg?height=300&width=400" alt="Tim Kantor" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="text-white font-medium">Tim Kantor</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="tim" onclick="openLightbox('/placeholder.svg?height=600&width=800', 'Rapat Tim', 'Suasana rapat koordinasi tim')">
+        <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+          <img src="/placeholder.svg?height=300&width=400" alt="Rapat Tim" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+            <h3 class="text-white font-medium">Rapat Tim</h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Load More Button -->
+    <div class="text-center mt-12">
+      <button onclick="loadMoreImages()" class="bg-navy-100 text-white px-8 py-3 rounded-full font-medium hover:bg-navy-200 transition duration-300">
+        Muat Lebih Banyak
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightboxModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden">
+  <div class="flex items-center justify-center min-h-screen p-4">
+    <div class="relative max-w-4xl w-full">
+      <!-- Close Button -->
+      <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      
+      <!-- Image -->
+      <img id="lightboxImage" src="/placeholder.svg" alt="" class="w-full h-auto max-h-[80vh] object-contain rounded-lg" />
+      
+      <!-- Caption -->
+      <div class="bg-white bg-opacity-90 p-4 rounded-b-lg">
+        <h3 id="lightboxTitle" class="text-xl font-semibold text-gray-800 mb-2"></h3>
+        <p id="lightboxDescription" class="text-gray-600"></p>
+      </div>
+      
+      <!-- Navigation Arrows -->
+      <button onclick="previousImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button onclick="nextImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

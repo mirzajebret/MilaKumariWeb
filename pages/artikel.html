@@ -1,0 +1,196 @@
+<section class="py-20 bg-gradient-to-br from-krem-50 to-white">
+  <div class="container mx-auto px-4 md:px-8">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-serif text-gray-800 mb-6">Artikel & Berita</h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Informasi terkini seputar Hukum, Notaris dan PPAT.
+      </p>
+    </div>
+
+    <!-- Featured Article -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden mb-12" data-category="notaris">
+      <div class="md:flex">
+        <div class="md:w-1/2">
+          <img src="https://lh4.googleusercontent.com/proxy/fwf5ORh-1bMeog9abytTl-lskR326L2kssf48bsJztoZvlHuEKQlhlemRAzBnFgYAc6ILH9OAUEO2cLpbk5_cI7-jphdWnPlmzBPkoM_NYdgbJBIsDLSqGbS6hf4tGutdgmxn_2Wf-drLir5WU7vl47Kgr2xufjUBN5Hp5xfXvOHSkBCJ2HvribcU041FGxHZyDaNTHpdLXjXhv-1-oyjsJlYwo" alt="Featured Article" class="w-full h-64 md:h-full object-cover" />
+        </div>
+        <div class="md:w-1/2 p-8">
+          <div class="flex items-center mb-4">
+            <span class="bg-rose-100 text-rose-600 px-3 py-1 rounded-full text-sm font-medium">Featured</span>
+            <span class="ml-3 text-gray-500 text-sm">15 Januari 2024</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-serif text-gray-800 mb-4">
+            Panduan Lengkap Membuat Akta Fidusia untuk Kendaraan Bermotor
+          </h2>
+          <p class="text-gray-600 mb-6">
+            Akta fidusia merupakan dokumen penting dalam transaksi pembiayaan kendaraan. Artikel ini membahas secara lengkap proses, persyaratan, dan manfaat membuat akta fidusia...
+          </p>
+          <button onclick="openArticleModal('featured')" class="bg-navy-100 text-white px-6 py-3 rounded-lg font-medium hover:bg-navy-200 transition duration-300">
+            Baca Selengkapnya
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Articles Grid -->
+    <div id="articlesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      <!-- Article 1 -->
+      <article class="article-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-category="ppat">
+        <img src="https://www.griyasatria.co.id/wp-content/uploads/2024/04/Apa-Itu-Sertifikat-Hak-Milik.jpg" alt="Article" class="w-full h-48 object-cover" />
+        <div class="p-6">
+          <div class="flex items-center mb-3">
+            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">PPAT</span>
+            <span class="ml-3 text-gray-500 text-sm">12 Januari 2024</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">
+            Proses Balik Nama Sertifikat Tanah: Langkah Demi Langkah
+          </h3>
+          <p class="text-gray-600 mb-4 hidden md:block">
+            Memahami proses balik nama sertifikat tanah yang benar dan legal untuk menghindari masalah di kemudian hari...
+          </p>
+          <button onclick="openArticleModal('article1')" class="text-navy-100 font-medium hover:underline">
+            Baca Selengkapnya →
+          </button>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="article-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-category="hukum">
+        <img src="https://pdb-lawfirm.id/wp-content/uploads/2022/11/wasiat-3.jpg" alt="Article" class="w-full h-48 object-cover" />
+        <div class="p-6">
+          <div class="flex items-center mb-3">
+            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">Hukum</span>
+            <span class="ml-3 text-gray-500 text-sm">10 Januari 2024</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">
+            Pentingnya Wasiat dalam Perencanaan Warisan
+          </h3>
+          <p class="text-gray-600 mb-4 hidden md:block">
+            Wasiat merupakan instrumen hukum penting untuk mengatur pembagian harta warisan sesuai keinginan pewaris...
+          </p>
+          <button onclick="openArticleModal('article2')" class="text-navy-100 font-medium hover:underline">
+            Baca Selengkapnya →
+          </button>
+        </div>
+      </article>
+
+      <!-- Article 3 -->
+      <article class="article-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-category="bisnis">
+        <img src="https://img.inews.co.id/media/600/files/inews_new/2022/04/02/pt.jpg" alt="Article" class="w-full h-48 object-cover" />
+        <div class="p-6">
+          <div class="flex items-center mb-3">
+            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">Bisnis</span>
+            <span class="ml-3 text-gray-500 text-sm">8 Januari 2024</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">
+            Cara Mendirikan PT: Persyaratan dan Prosedur Terbaru
+          </h3>
+          <p class="text-gray-600 mb-4 hidden md:block">
+            Panduan lengkap mendirikan Perseroan Terbatas (PT) dengan persyaratan dan prosedur terbaru sesuai regulasi...
+          </p>
+          <button onclick="openArticleModal('article3')" class="text-navy-100 font-medium hover:underline">
+            Baca Selengkapnya →
+          </button>
+        </div>
+      </article>
+
+      <!-- Article 4 -->
+      <article class="article-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-category="properti">
+        <img src="https://palpres.bacakoran.co/upload/f9842503698bdf514aa06836659bb6a5.jpeg" alt="Article" class="w-full h-48 object-cover" />
+        <div class="p-6">
+          <div class="flex items-center mb-3">
+            <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm font-medium">Properti</span>
+            <span class="ml-3 text-gray-500 text-sm">5 Januari 2024</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">
+            Tips Aman Membeli Rumah Bekas: Cek Legal dan Dokumen
+          </h3>
+          <p class="text-gray-600 mb-4 hidden md:block">
+            Hal-hal penting yang harus diperhatikan saat membeli rumah bekas untuk menghindari masalah legal...
+          </p>
+          <button onclick="openArticleModal('article4')" class="text-navy-100 font-medium hover:underline">
+            Baca Selengkapnya →
+          </button>
+        </div>
+      </article>
+
+      <!-- Article 5 -->
+      <article class="article-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-category="tips">
+        <img src="https://mascargoexpress.com/wp-content/uploads/2019/07/akter-kelahiran-jpg-5c0f3a3e6ddcae658a2309c2.jpg" alt="Article" class="w-full h-48 object-cover" />
+        <div class="p-6">
+          <div class="flex items-center mb-3">
+            <span class="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm font-medium">Tips</span>
+            <span class="ml-3 text-gray-500 text-sm">3 Januari 2024</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">
+            5 Dokumen Penting yang Harus Dimiliki Setiap Keluarga
+          </h3>
+          <p class="text-gray-600 mb-4 hidden md:block">
+            Dokumen-dokumen legal penting yang sebaiknya dimiliki dan disimpan dengan baik oleh setiap keluarga...
+          </p>
+          <button onclick="openArticleModal('article5')" class="text-navy-100 font-medium hover:underline">
+            Baca Selengkapnya →
+          </button>
+        </div>
+      </article>
+
+      <!-- Article 6 -->
+      <article class="article-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-category="notaris">
+        <img src="https://lh6.googleusercontent.com/R53I0hFDv3Ol3ON6_8cc3FimK9_FTAo0jGuoi8NsyXFIcIwRrCfMFD6VKbD_PIwpgE6qvtGGsCv73ckWPv8XCkS5p4ATOA4k8hs6Djc87iRP5jhGm6zf-SzAha2PQjNCpKgxx87qM1jXB41lVqJfnYW4waoMn_fC5xLx2YrUAlVnEf0VjlCokpoltqKnHDf5qSpDhXx4uA" alt="Article" class="w-full h-48 object-cover" />
+        <div class="p-6">
+          <div class="flex items-center mb-3">
+            <span class="bg-rose-100 text-rose-600 px-3 py-1 rounded-full text-sm font-medium">Notaris</span>
+            <span class="ml-3 text-gray-500 text-sm">1 Januari 2024</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">
+            Perbedaan Akta Otentik dan Akta di Bawah Tangan
+          </h3>
+          <p class="text-gray-600 mb-4 hidden md:block">
+            Memahami perbedaan mendasar antara akta otentik dan akta di bawah tangan serta kekuatan hukumnya...
+          </p>
+          <button onclick="openArticleModal('article6')" class="text-navy-100 font-medium hover:underline">
+            Baca Selengkapnya →
+          </button>
+        </div>
+      </article>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center">
+      <nav class="flex space-x-2">
+        <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition duration-300">
+          ← 
+        </button>
+        <button class="px-4 py-2 bg-navy-100 text-white rounded-lg">1</button>
+        <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition duration-300">2</button>
+        <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition duration-300">3</button>
+        <button class="px-4 py-2 border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 transition duration-300">
+           →
+        </button>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- Article Modal -->
+<div id="articleModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+  <div class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="p-6 border-b border-gray-200">
+        <div class="flex justify-between items-center">
+          <h2 id="modalTitle" class="text-2xl font-serif text-gray-800"></h2>
+          <button onclick="closeArticleModal()" class="text-gray-500 hover:text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="p-6">
+        <div id="modalContent" class="prose max-w-none">
+          <!-- Article content will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
