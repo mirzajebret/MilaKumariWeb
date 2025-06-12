@@ -250,5 +250,21 @@
 
   <!-- JavaScript -->
   <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  const currentYearEl = document.getElementById('currentYear');
+  if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
+
+  const hashPage = window.location.hash.replace('#', '');
+  if (hashPage) {
+    loadPage(hashPage);
+  } else {
+    loadPage('home');
+  }
+
+  initializeEventListeners();
+});
+
+  </script>
 </body>
 </html>
