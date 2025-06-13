@@ -70,10 +70,6 @@ async function loadPage(pageId) {
 
 // Feature init
 function initializePageSpecificFeatures() {
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', handleContactFormSubmission);
-  }
 
   const serviceCards = document.querySelectorAll('.service-card');
   serviceCards.forEach(card => {
@@ -112,37 +108,6 @@ function toggleMobileDropdown() {
   const icon = document.getElementById('mobileDropdownIcon');
   if (dropdown) dropdown.classList.toggle('hidden');
   if (icon) icon.classList.toggle('rotate-180');
-}
-
-// Handlers
-function handleContactFormSubmission(e) {
-  e.preventDefault();
-
-  const formData = new FormData(e.target);
-  const data = {
-    name: formData.get('name'),
-    email: formData.get('email'),
-    phone: formData.get('phone'),
-    service: formData.get('service'),
-    message: formData.get('message')
-  };
-
-
-  // GANTI URL DI BAWAH INI DENGAN URL APPS SCRIPT KAMU
-  fetch("https://script.google.com/macros/s/AKfycbwV8DEoBOR5TWElrGoB7e7pUgz5_TJV77a-Awfhels5vNnwDwhPyEUcfXCn4mJcsghJ8g/exec", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  })
-  .then(response => response.json())
-  .then(result => {
-    showNotification('Terima kasih! Pesan Anda telah terkirim.', 'success');
-    e.target.reset();
-  })
-  .catch(error => {
-    alert('Gagal mengirim pesan. Silakan coba lagi.');
-    console.error(error);
-  });
 }
 
 
@@ -203,3 +168,25 @@ window.addEventListener('scroll', debounce(() => {}, 100));
 window.loadPage = loadPage;
 window.scrollToSection = scrollToSection;
 window.toggleMobileDropdown = toggleMobileDropdown;
+
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+e.preventDefault();
+
+const form = e.target;
+const formData = new FormData(form);
+
+fetch(form.action, {
+  method: "POST",
+  body: formData,
+})
+.then(response => response.json())
+.then(data => {
+  alert("Pesan berhasil dikirim!");
+  form.reset();
+})
+.catch(error => {
+  console.error(error);
+  alert("Gagal mengirim pesan.");
+});
+});
