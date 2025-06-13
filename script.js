@@ -132,19 +132,23 @@ function handleContactFormSubmission(e) {
     return;
   }
 
-  console.log('Contact form submitted:', data);
-  showNotification('Terima kasih! Pesan Anda telah terkirim.', 'success');
-  e.target.reset();
+  // GANTI URL DI BAWAH INI DENGAN URL APPS SCRIPT KAMU
+  fetch("https://script.google.com/macros/s/AKfycbwV8DEoBOR5TWElrGoB7e7pUgz5_TJV77a-Awfhels5vNnwDwhPyEUcfXCn4mJcsghJ8g/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(result => {
+    showNotification('Terima kasih! Pesan Anda telah terkirim.', 'success');
+    e.target.reset();
+  })
+  .catch(error => {
+    alert('Gagal mengirim pesan. Silakan coba lagi.');
+    console.error(error);
+  });
 }
 
-function handleNewsletterSubmission(e) {
-  e.preventDefault();
-  const email = e.target.querySelector('input[type="email"]').value;
-  if (!email) return alert('Mohon masukkan alamat email yang valid.');
-  console.log('Newsletter subscription:', email);
-  showNotification('Berhasil berlangganan!', 'success');
-  e.target.reset();
-}
 
 function handleOutsideClick(e) {
   const menu = document.getElementById('mobileMenu');
