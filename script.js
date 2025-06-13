@@ -127,10 +127,6 @@ function handleContactFormSubmission(e) {
     message: formData.get('message')
   };
 
-  if (!data.name || !data.email || !data.phone || !data.message) {
-    alert('Mohon lengkapi semua field yang wajib diisi.');
-    return;
-  }
 
   // GANTI URL DI BAWAH INI DENGAN URL APPS SCRIPT KAMU
   fetch("https://script.google.com/macros/s/AKfycbwV8DEoBOR5TWElrGoB7e7pUgz5_TJV77a-Awfhels5vNnwDwhPyEUcfXCn4mJcsghJ8g/exec", {
