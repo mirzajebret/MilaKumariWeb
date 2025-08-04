@@ -1,3 +1,38 @@
+
+<section class="banner-section">
+  <!-- Banner Mobile -->
+  <div class="banner-mobile">
+    <img src="/asset/banner-hut-80-notaris-ppat-mila-kumari-mobile-6890418a59188.webp" alt="Dirgahayu Republik Indonesia Banner Mobile" style="width:100%; height:auto;">
+  </div>
+
+  <!-- Banner Desktop -->
+  <div class="banner-desktop">
+    <img src="/asset/banner-hut-80-notaris-ppat-mila-kumari-desktop-68904189832ec.webp" alt="Dirgahayu Republik Indonesia Banner Desktop" style="width:100%; height:auto;">
+  </div>
+</section>
+
+<style>
+  /* Tampilkan desktop banner secara default */
+  .banner-mobile {
+    display: none;
+  }
+
+  .banner-desktop {
+    display: block;
+  }
+
+  /* Jika lebar layar <= 767px, tampilkan banner mobile */
+  @media screen and (max-width: 767px) {
+    .banner-mobile {
+      display: block;
+    }
+    .banner-desktop {
+      display: none;
+    }
+  }
+</style>
+
+
 <!-- Hero Section -->
 <section class="relative h-[90vh] flex items-center">
   <div class="absolute inset-0 z-0">
@@ -370,3 +405,4 @@
     </div>
   </div>
 </section>
+
