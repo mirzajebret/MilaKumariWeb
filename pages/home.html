@@ -1,172 +1,61 @@
-
-<!-- <section class="banner-section"> -->
-  <!-- Banner Mobile -->
-<!--   <div class="banner-mobile mt-5">
-    <img src="/asset/banner-hut-80-mk-mobile-689174de83ef6.webp" alt="Dirgahayu Republik Indonesia Banner Mobile" style="width:100%; height:auto;">
-  </div>
- -->
-  <!-- Banner Desktop -->
-<!--   <div class="banner-desktop mt-8">
-    <img src="/asset/banner-hut-80-mk-desktop-689174deccbd1.webp" alt="Dirgahayu Republik Indonesia Banner Desktop" style="width:100%; height:auto;">
-  </div>
-</section> -->
-
-<style>
-  /* Tampilkan desktop banner secara default */
-  .banner-mobile {
-    display: none;
-  }
-
-  .banner-desktop {
-    display: block;
-  }
-
-  /* Jika lebar layar <= 767px, tampilkan banner mobile */
-  @media screen and (max-width: 767px) {
-    .banner-mobile {
-      display: block;
-    }
-    .banner-desktop {
-      display: none;
-    }
-  }
-</style>
-
-
-<!-- Hero Section -->
-<section class="relative h-[90vh] flex items-center">
-  <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-krem-100 backdrop-blur-sm"></div>
-<!--     <img src="/asset/web-bg.webp" alt="Background" class="object-cover w-full h-full" /> -->
-  </div>
-  <div class="container mx-auto px-4 md:px-8 z-10 flex flex-col md:flex-row items-center">
-    
-    <div class="md:w-1/2 flex justify-center mb-10 md:mb-0">
-      <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-krem-50 shadow-xl">
-        <img src="/asset/mila-kumari-stand-half.webp" alt="Mila Kumari" class="object-cover w-full h-full" />
-      </div>
-    </div>
-    
-    <div class="md:w-1/2 text-center md:text-left">
-      <h1 class="text-3xl md:text-6xl font-serif font-semibold text-navy-100 mb-4">Mila Kumari, S.H., M.Kn</h1>
-      <h2 class="text-xl md:text-2xl font-sans text-navy-100 mb-6">Notaris & PPAT Bandung Barat</h2>
-      <p class="text-md md:text-xl text-gray-700 mb-8 max-w-lg">
-        Memberikan layanan Notaris dan PPAT terpercaya dengan integritas tinggi selama lebih dari
-        15 tahun.
-      </p>
-      <div class="flex space-x-4">
-        <div class="w-full flex justify-center md:justify-start">
-          <button onclick="scrollToSection('contact')" class="bg-navy-100 text-white px-6 py-3 rounded-full font-medium transition duration-300 shadow-md">
-            Hubungi Kami
-          </button>
+<!-- Hero and Services Section -->
+<div class="relative overflow-hidden">
+    <div class="container mx-auto px-8 pt-24 md:pt-32 pb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6 text-center md:text-left pb-48">
+                <div class="max-w-md md:hidden">
+                  <img src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/mila-kumari-test-hero.webp" alt="Havis Akbar, Notaris & PPAT" class="w-full h-auto object-cover">
+                </div>
+                <h1 class="text-3xl md:text-5xl font-serif font-bold leading-tight text-brand-text">Kantor Notaris & PPAT <br> Mila Kumari,   S.H., M.Kn.</h1>
+                <p class="text-brand-gray text-lg">Layanan Kenotariatan & Pertanahan Terpercaya di Bandung Barat</p>
+                <button onclick="scrollToSection('contact')" class="inline-block bg-brand-gold text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all">
+                    Jadwalkan Janji
+                </button>
+            </div>
+            <div class="hidden md:flex justify-center">
+                <div class="max-w-md">
+                    <img src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/mila-kumari-test-hero.webp" alt="Havis Akbar, Notaris & PPAT" class="w-full h-auto object-cover">
+                </div>
+            </div>
         </div>
-      
-      </div>
-    </div>
-    
-  </div>
-</section>
-
-<!-- Trust Indicators -->
-<section class="py-12 bg-sage-100">
-  <div class="container mx-auto px-4 md:px-8">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-      <div class="p-6 rounded-xl bg-krem-50 shadow-md">
-        <p class="text-4xl font-bold text-navy-100 mb-2">15+</p>
-        <p class="text-gray-700">Tahun Pengalaman</p>
-      </div>
-      <div class="p-6 rounded-xl bg-krem-50 shadow-md">
-        <p class="text-4xl font-bold text-navy-100 mb-2">1200+</p>
-        <p class="text-gray-700">Klien Kami</p>
-      </div>
-      <div class="p-6 rounded-xl bg-krem-50 shadow-md">
-        <p class="text-4xl font-bold text-navy-100 mb-2">3000+</p>
-        <p class="text-gray-700">Akta Selesai</p>
-      </div>
-      <div class="p-6 rounded-xl bg-krem-50 shadow-md">
-        <p class="text-4xl font-bold text-navy-100 mb-2">100%</p>
-        <p class="text-gray-700">Legalitas Terjamin</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Services Overview -->
-<section class="py-16 bg-krem-100">
-  <div class="container mx-auto px-4 md:px-8">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-serif text-gray-800 mb-4">Layanan Kami</h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">
-        Menyediakan berbagai layanan notaris dan PPAT dengan profesionalisme tinggi untuk memenuhi kebutuhan 
-        Anda.
-      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="service-card bg-white p-8 rounded-xl shadow-md  cursor-pointer" onclick="loadPage('notaris')">
-        <div class="w-16 h-16 bg-krem-50 rounded-full flex items-center justify-center mb-6 mx-auto">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-navy-100" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-            <polyline points="10 9 9 9 8 9"></polyline>
-          </svg>
+    <div id="layanan" class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] md:w-full max-w-5xl">
+        <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center ">
+                <div class="flex flex-col items-center justify-start gap-2 cursor-pointer group p-2">
+                    <svg class="w-10 h-10 md:w-16 md:h-16 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <p class="font-bold text-sm md:text-xl leading-snug">Layanan Notaris</p>
+                </div>
+                <div class="flex flex-col items-center justify-start gap-2 cursor-pointer group p-2">
+                    <svg class="w-10 h-10 md:w-16 md:h-16 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    <p class="font-bold text-sm md:text-xl leading-snug">Layanan PPAT</p>
+                </div>
+                <div class="flex flex-col items-center justify-start gap-2 cursor-pointer group p-2">
+                    <svg class="w-10 h-10 md:w-16 md:h-16 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <p class="font-bold text-sm md:text-xl leading-snug">Layanan Lainnya</p>
+                </div>
+                <div class="flex flex-col items-center justify-start gap-2 cursor-pointer group p-2">
+                   <svg class="w-10 h-10 md:w-16 md:h-16 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    <p class="font-bold text-sm md:text-xl leading-snug">Konsultasi Online</p>
+                </div>
+            </div>
         </div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Layanan Notaris</h3>
-        <p class="text-gray-600 text-center mb-4">Pembuatan akta autentik dan legalisasi dokumen dengan standar hukum tertinggi.</p>
-        <div class="text-center">
-          <span class="text-navy-100 font-medium hover:underline">Lihat Layanan →</span>
-        </div>
-      </div>
-
-      <div class="service-card bg-white p-8 rounded-xl shadow-md  cursor-pointer" onclick="loadPage('ppat')">
-        <div class="w-16 h-16 bg-krem-50 rounded-full flex items-center justify-center mb-6 mx-auto">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-navy-100" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="8" r="7"></circle>
-            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Layanan PPAT</h3>
-        <p class="text-gray-600 text-center mb-4">Pengurusan akta tanah dan properti dengan proses yang cepat dan terpercaya.</p>
-        <div class="text-center">
-          <span class="text-navy-100 font-medium hover:underline">Lihat Layanan →</span>
-        </div>
-      </div>
-
-      <div class="service-card bg-white p-8 rounded-xl shadow-md  cursor-pointer" onclick="loadPage('lainnya')">
-        <div class="w-16 h-16 bg-krem-50 rounded-full flex items-center justify-center mb-6 mx-auto">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-navy-100" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-          </svg>
-        </div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Layanan Lainnya</h3>
-        <p class="text-gray-600 text-center mb-4">Konsultasi hukum dan layanan pendukung lainnya untuk kebutuhan legal Anda.</p>
-        <div class="text-center">
-          <span class="text-navy-100 font-medium hover:underline">Lihat Layanan →</span>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
+</div>
 
-<!-- Experience Section -->
-<section id="about" class="py-16 bg-krem-50">
-  <div class="container mx-auto px-4 md:px-8">
-    <div class="flex flex-col md:flex-row items-center">
-      <div class="md:w-1/2 mb-10 md:mb-0">
-        <div class="relative w-full h-96 rounded-xl overflow-hidden shadow-xl">
-          <img src="/asset/ibu_mila_desk2.jpg" alt="Mila Kumari di kantor" class="object-cover w-full h-full" />
-        </div>
-      </div>
-      <div class="md:w-1/2 md:pl-12">
-        <h2 class="text-3xl md:text-4xl font-serif text-gray-800 mb-6">Pengalaman & Keahlian</h2>
-        <p class="text-gray-600 mb-6">
-          Dengan pengalaman lebih dari 15 tahun sebagai Notaris dan PPAT di Bandung Barat, Mila Kumari telah
-          membangun reputasi yang kuat dalam memberikan layanan hukum berkualitas tinggi dengan integritas dan
-          profesionalisme.
-        </p>
-        <div class="space-y-4">
+<!-- Profile Section -->
+<section id="profil-notaris" class="pt-32 pb-16 bg-brand-bg">
+    <div class="container mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
+            <div class="md:col-span-1">
+                <img src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/test-hero-3.jpg" alt="Profil Havis Akbar" class="w-[350px] h-full object-cover">
+            </div>
+            <div class="md:col-span-2 space-y-3">
+                <h2 class="text-2xl font-serif font-bold">Profil Notaris</h2>
+                <h3 class="text-3xl font-serif font-bold">Mila Kumari, S.H., M.Kn.</h3>
+                <p class="text-brand-gray">Dengan pengalaman lebih dari 15 tahun sebagai Notaris dan PPAT di Bandung Barat, Mila Kumari telah membangun reputasi yang kuat dalam memberikan layanan hukum berkualitas tinggi dengan integritas dan profesionalisme.</p>
+          <div class="space-y-4">
           <div class="flex items-start">
             <div class="w-10 h-10 bg-krem-100 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-navy-100" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -214,10 +103,9 @@
               </p>
             </div>
           </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
 <!-- Team Section -->
@@ -230,8 +118,10 @@
       </p>
     </div>
     <div class="bg-white rounded-xl shadow-md p-8 mb-16">
-      <img src="/asset/tim_kami.jpg" alt="">
+      <img src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/tim_kami.jpg" alt="Team Kami">
     </div>
+  </div>
+</section>
 
 <!-- Contact Section -->
 <section id="contact" class="py-16 bg-krem-50">
@@ -318,7 +208,7 @@
                 type="text"
                 id="name"
                 name="name"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-rose-500 focus:border-rose-500"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-gold focus:border-brand-gold"
                 placeholder="Masukkan nama lengkap Anda"
                 required
               />
@@ -332,7 +222,7 @@
                 type="email"
                 id="email"
                 name="email"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-rose-500 focus:border-rose-500"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-gold focus:border-brand-gold"
                 placeholder="Masukkan alamat email Anda"
                 required
               />
@@ -346,7 +236,7 @@
                 type="tel"
                 id="phone"
                 name="phone"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-rose-500 focus:border-rose-500"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-gold focus:border-brand-gold"
                 placeholder="Masukkan nomor telepon Anda"
                 required
               />
@@ -359,7 +249,7 @@
               <select
                 id="service"
                 name="service"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-rose-500 focus:border-rose-500"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-gold focus:border-brand-gold"
                 required
               >
                 <option value="">Pilih layanan</option>
@@ -378,7 +268,7 @@
                 id="message"
                 name="message"
                 rows="4"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-rose-500 focus:border-rose-500"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-brand-gold focus:border-brand-gold"
                 placeholder="Tuliskan pesan atau pertanyaan Anda"
                 required
               ></textarea>
@@ -386,7 +276,7 @@
 
             <button
               type="submit"
-              class="w-full bg-navy-100 text-white px-6 py-3 rounded-lg font-medium transition duration-300 shadow-md"
+              class="w-full bg-brand-gold text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-700 transition duration-300 shadow-md"
             >
               Kirim Pesan
             </button>
@@ -405,8 +295,3 @@
     </div>
   </div>
 </section>
-
-
-
-
-
