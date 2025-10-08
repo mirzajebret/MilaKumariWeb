@@ -178,7 +178,7 @@
         right: 8px; /* Jarak dari kanan */
         display: flex;
         flex-direction: column; /* Menyusun tombol secara vertikal */
-        gap: 5px; /* Jarak antar tombol */
+        gap: 1px; /* Jarak antar tombol */
         z-index: 1000; /* Memastikan tombol tampil di atas konten lain */
     }
 
@@ -196,11 +196,12 @@
 
     /* Gaya untuk label teks (CS 1, CS 2) */
     .whatsapp-button .text-label {
-        background-color: #4A4A4A; /* Warna latar belakang abu-abu tua */
+        border-radius: 15px;
+        background-color: #a5811d; /* Warna latar belakang abu-abu tua */
         color: white; /* Warna teks putih */
         padding: 7px 18px;
         font-family: Arial, sans-serif;
-        font-size: 16px;
+        font-size: 13px;
         font-weight: bold;
         box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Bayangan halus */
     }
@@ -209,19 +210,19 @@
     .whatsapp-button .whatsapp-icon {
         width: 50px; /* Ukuran ikon */
         height: 50px;
-        margin-left: -5px; /* Sedikit tumpang tindih dengan label untuk efek menyatu */
+        margin-left: 0px; /* Sedikit tumpang tindih dengan label untuk efek menyatu */
     }
 </style>
 
 <div class="whatsapp-container">
     <a href="https://wa.me/6282217259555?text=Halo%20Notaris%2C%20perkenalkan%20saya%20%3A%0A%0ANama%20%3A%20%0ALokasi%20%3A%20%0APertanyaan%20%3A%20%0A%0ATerimakasih%20atas%20bantuannya." class="whatsapp-button" target="_blank">
-        <span class="text-label">CS 1</span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2048px-WhatsApp.svg.png" alt="WhatsApp CS 1" class="whatsapp-icon">
+        <span class="text-label">Admin 1</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2048px-WhatsApp.svg.png" alt="WhatsApp Admin 1" class="whatsapp-icon">
     </a>
 
     <a href="https://wa.me/62817215980?text=Halo%20Notaris%2C%20perkenalkan%20saya%20%3A%0A%0ANama%20%3A%20%0ALokasi%20%3A%20%0APertanyaan%20%3A%20%0A%0ATerimakasih%20atas%20bantuannya." class="whatsapp-button" target="_blank">
-        <span class="text-label">CS 2</span>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2048px-WhatsApp.svg.png" alt="WhatsApp CS 2" class="whatsapp-icon">
+        <span class="text-label">Admin 2</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2048px-WhatsApp.svg.png" alt="WhatsApp Admin 2" class="whatsapp-icon">
     </a>
 </div>
   <!-- Footer -->
@@ -347,4 +348,5 @@
   </script>
 </body>
 </html>
+
 
