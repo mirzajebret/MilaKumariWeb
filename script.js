@@ -1,192 +1,312 @@
-// Global variables
+// ============================================================
+//  Kantor Notaris & PPAT Mila Kumari — Main Script
+// ============================================================
+
+'use strict';
+
+// ---------- Global State ----------
 let currentPage = 'home';
+let revealObserver = null;
 
+// ============================================================
+//  INIT
+// ============================================================
 document.addEventListener('DOMContentLoaded', function () {
-  const currentYearEl = document.getElementById('currentYear');
-  if (currentYearEl) currentYearEl.textContent = new Date().getFullYear();
+  // Year in footer
+  const yearEl = document.getElementById('currentYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Setup persistent UI
+  setupNavbar();
+  setupMobileMenu();
+  setupScrollReveal();
+
+  // Load page from hash or default to home
   if (document.getElementById('mainContent')) {
-    loadPage('home');
+    const hash = window.location.hash.replace('#', '');
+    const validPages = ['home', 'notaris', 'ppat', 'lainnya', 'galeri', 'artikel'];
+    loadPage(validPages.includes(hash) ? hash : 'home');
   }
-
-  initializeEventListeners();
 });
 
-// Initialize all event listeners
-function initializeEventListeners() {
-  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-  if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+// ============================================================
+//  NAVBAR — Transparent ↔ Solid on Scroll
+// ============================================================
+function setupNavbar() {
+  const nav = document.getElementById('mainNav');
+  if (!nav) return;
+
+  // Hero pages show transparent nav at top
+  const heroPages = ['home'];
+
+  function updateNavbar() {
+    const isHeroPage = heroPages.includes(currentPage);
+    if (isHeroPage && window.scrollY < 80) {
+      nav.className = 'navbar navbar-transparent';
+    } else {
+      nav.className = 'navbar navbar-solid';
+    }
   }
 
-  const subscribeForm = document.getElementById('subscribeForm');
-  if (subscribeForm) {
-    subscribeForm.addEventListener('submit', handleNewsletterSubmission);
-  }
+  window.addEventListener('scroll', updateNavbar, { passive: true });
+  // Also called after page loads (see loadPage)
+  window._updateNavbar = updateNavbar;
+}
 
-  document.addEventListener('click', handleOutsideClick);
+// ============================================================
+//  MOBILE MENU
+// ============================================================
+function setupMobileMenu() {
+  const toggle = document.getElementById('mobileToggle');
+  const menu   = document.getElementById('mobileMenu');
+  if (!toggle || !menu) return;
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', handleAnchorClick);
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
   });
 }
 
-// Load page into mainContent (only on index.html)
-async function loadPage(pageId) {
-  const mainContent = document.getElementById('mainContent');
-  
-  // Jika tidak di halaman index.html (tidak ada #mainContent), redirect ke index.html dengan hash
-  if (!mainContent) {
+window.closeMobileMenu = function () {
+  const menu   = document.getElementById('mobileMenu');
+  const toggle = document.getElementById('mobileToggle');
+  if (menu)   menu.classList.remove('open');
+  if (toggle) toggle.setAttribute('aria-expanded', 'false');
+};
+
+// ============================================================
+//  PAGE LOADER
+// ============================================================
+window.loadPage = async function (pageId) {
+  const main = document.getElementById('mainContent');
+  if (!main) {
     window.location.href = `/index.html#${pageId}`;
     return;
   }
 
   try {
-    mainContent.classList.add('loading');
+    main.classList.add('loading');
+    main.classList.remove('loaded');
 
-    const response = await fetch(`pages/${pageId}.html`);
-    if (!response.ok) throw new Error(`Failed to load page: ${response.status}`);
+    const res = await fetch(`pages/${pageId}.html`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-    const content = await response.text();
-    mainContent.innerHTML = content;
+    const html = await res.text();
+    main.innerHTML = html;
     currentPage = pageId;
+
     closeMobileMenu();
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    initializePageSpecificFeatures();
+    // Update navbar state for new page
+    if (window._updateNavbar) window._updateNavbar();
+
+    // Re-run reveal observer
+    setupScrollReveal();
+
+    // Page-specific init
+    initPageFeatures();
+
+    // Contact form (only exists on home page)
+    setupContactForm();
 
     setTimeout(() => {
-      mainContent.classList.remove('loading');
-      mainContent.classList.add('loaded');
-    }, 100);
-  } catch (error) {
-    console.error('Error loading page:', error);
-    if (pageId !== 'home') {
-      loadPage('home');
-    }
+      main.classList.remove('loading');
+      main.classList.add('loaded');
+    }, 80);
+
+  } catch (err) {
+    console.error('Failed to load page:', err);
+    if (pageId !== 'home') loadPage('home');
   }
-}
+};
 
-
-// Feature init
-function initializePageSpecificFeatures() {
-
-  const serviceCards = document.querySelectorAll('.service-card');
-  serviceCards.forEach(card => {
-    card.addEventListener('mouseenter', handleServiceCardHover);
-    card.addEventListener('mouseleave', handleServiceCardLeave);
-  });
-}
-
-// Navigation and Mobile Menu
-function scrollToSection(sectionId) {
+// ============================================================
+//  SCROLL TO SECTION
+// ============================================================
+window.scrollToSection = function (sectionId) {
   if (currentPage !== 'home') {
     loadPage('home').then(() => {
       setTimeout(() => {
-        const section = document.getElementById(sectionId);
-        if (section) section.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 450);
     });
   } else {
-    const section = document.getElementById(sectionId);
-    if (section) section.scrollIntoView({ behavior: 'smooth' });
+    const el = document.getElementById(sectionId);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    closeMobileMenu();
   }
+};
+
+// ============================================================
+//  SCROLL REVEAL — Intersection Observer
+// ============================================================
+function setupScrollReveal() {
+  // Disconnect previous observer
+  if (revealObserver) revealObserver.disconnect();
+
+  const elements = document.querySelectorAll('.reveal');
+
+  revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  elements.forEach(el => revealObserver.observe(el));
 }
 
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobileMenu');
-  if (menu) menu.classList.toggle('hidden');
+// ============================================================
+//  ANIMATED COUNTER (for hero stats)
+// ============================================================
+function animateCounters() {
+  const counters = document.querySelectorAll('[data-count]');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el     = entry.target;
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const dur    = 1800;
+      const start  = performance.now();
+
+      function step(now) {
+        const progress = Math.min((now - start) / dur, 1);
+        // Ease-out cubic
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const val  = Math.round(ease * target);
+
+        // Format large numbers
+        el.textContent = target >= 1000
+          ? val.toLocaleString('id-ID') + suffix
+          : val + suffix;
+
+        if (progress < 1) requestAnimationFrame(step);
+      }
+
+      requestAnimationFrame(step);
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(el => observer.observe(el));
 }
 
-function closeMobileMenu() {
-  const menu = document.getElementById('mobileMenu');
-  if (menu) menu.classList.add('hidden');
+// ============================================================
+//  PAGE-SPECIFIC FEATURES
+// ============================================================
+function initPageFeatures() {
+  animateCounters();
+
+  // Service card hover (legacy)
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.addEventListener('mouseenter', () => card.style.transform = 'translateY(-5px)');
+    card.addEventListener('mouseleave', () => card.style.transform = '');
+  });
 }
 
-function toggleMobileDropdown() {
-  const dropdown = document.getElementById('mobileDropdownMenu');
-  const icon = document.getElementById('mobileDropdownIcon');
-  if (dropdown) dropdown.classList.toggle('hidden');
-  if (icon) icon.classList.toggle('rotate-180');
+// ============================================================
+//  CONTACT FORM
+// ============================================================
+function setupContactForm() {
+  const form = document.getElementById('contactForm');
+  if (!form) return; // form only exists on home page
+
+  // Remove existing listener by cloning
+  const fresh = form.cloneNode(true);
+  form.parentNode.replaceChild(fresh, form);
+
+  fresh.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const btn = fresh.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Mengirim...';
+    btn.disabled = true;
+
+    try {
+      const formData = new FormData(fresh);
+      await fetch(fresh.action, { method: 'POST', body: formData });
+      showNotification('Pesan berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
+      fresh.reset();
+    } catch (err) {
+      console.error(err);
+      showNotification('Gagal mengirim pesan. Silakan coba lagi atau hubungi via WhatsApp.', 'error');
+    } finally {
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }
+  });
 }
 
-
-function handleOutsideClick(e) {
-  const menu = document.getElementById('mobileMenu');
-  const btn = document.getElementById('mobileMenuBtn');
-  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
-    menu.classList.add('hidden');
-  }
-}
-
-function handleAnchorClick(e) {
-  e.preventDefault();
-  const targetId = e.target.getAttribute('href');
-  if (targetId && targetId !== '#') {
-    const el = document.querySelector(targetId);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  }
-}
-
-function handleServiceCardHover(e) {
-  e.currentTarget.style.transform = 'translateY(-5px)';
-}
-
-function handleServiceCardLeave(e) {
-  e.currentTarget.style.transform = 'translateY(0)';
-}
-
-// Utility
+// ============================================================
+//  NOTIFICATION TOAST
+// ============================================================
 function showNotification(message, type = 'info') {
-  const notification = document.createElement('div');
-  notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg max-w-sm transition-all duration-300 ${
-    type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-blue-500'
-  } text-white`;
-  notification.textContent = message;
+  const existing = document.querySelector('.mk-toast');
+  if (existing) existing.remove();
 
-  document.body.appendChild(notification);
+  const colors = {
+    success: 'background: linear-gradient(135deg, #0F1F3D, #1A3260); border-left: 4px solid #C9A84C;',
+    error:   'background: linear-gradient(135deg, #7f1d1d, #991b1b); border-left: 4px solid #FCA5A5;',
+    info:    'background: linear-gradient(135deg, #1e3a5f, #2d4e7f); border-left: 4px solid #93C5FD;',
+  };
+
+  const toast = document.createElement('div');
+  toast.className = 'mk-toast';
+  toast.style.cssText = `
+    position: fixed; top: 24px; right: 24px; z-index: 9999;
+    ${colors[type] || colors.info}
+    color: white; padding: 1rem 1.5rem; border-radius: 10px;
+    max-width: 360px; font-size: 14px; line-height: 1.5;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    opacity: 0; transform: translateY(-12px);
+    transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  `;
+  toast.textContent = message;
+  document.body.appendChild(toast);
+
+  requestAnimationFrame(() => {
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateY(0)';
+  });
 
   setTimeout(() => {
-    notification.style.opacity = '0';
-    setTimeout(() => {
-      notification.remove();
-    }, 300);
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(-12px)';
+    setTimeout(() => toast.remove(), 350);
   }, 5000);
 }
 
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), wait);
+// ============================================================
+//  EXPOSE GLOBALS
+// ============================================================
+window.loadPage        = window.loadPage;
+window.scrollToSection = window.scrollToSection;
+window.closeMobileMenu = window.closeMobileMenu;
+
+// Debounce utility
+function debounce(fn, delay) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
   };
 }
-
-window.addEventListener('scroll', debounce(() => {}, 100));
-
-// Expose functions
-window.loadPage = loadPage;
-window.scrollToSection = scrollToSection;
-window.toggleMobileDropdown = toggleMobileDropdown;
-
-
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-e.preventDefault();
-
-const form = e.target;
-const formData = new FormData(form);
-
-fetch(form.action, {
-  method: "POST",
-  body: formData,
-})
-.then(response => response.json())
-.then(data => {
-  alert("Pesan berhasil dikirim!");
-  form.reset();
-})
-.catch(error => {
-  console.error(error);
-  alert("Gagal mengirim pesan.");
-});
-});
