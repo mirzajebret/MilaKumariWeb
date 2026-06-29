@@ -154,7 +154,7 @@ function setupScrollReveal() {
   // Disconnect previous observer
   if (revealObserver) revealObserver.disconnect();
 
-  const elements = document.querySelectorAll('.reveal');
+  const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
   revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -164,11 +164,15 @@ function setupScrollReveal() {
       }
     });
   }, {
-    threshold: 0.12,
+    threshold: 0.1,
     rootMargin: '0px 0px -40px 0px'
   });
 
   elements.forEach(el => revealObserver.observe(el));
+
+  // Trigger hero bg kenosis animation
+  const heroBg = document.getElementById('heroBg');
+  if (heroBg) setTimeout(() => heroBg.classList.add('loaded'), 150);
 }
 
 // ============================================================

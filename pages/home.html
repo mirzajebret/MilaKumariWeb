@@ -1,31 +1,41 @@
 <!-- ============================================================
      HOME PAGE — Kantor Notaris & PPAT Mila Kumari
+     Design v2.0 — Dark Luxury Law
 ============================================================ -->
 
 <!-- ==================== HERO SECTION ==================== -->
 <section class="hero-section" id="hero">
+  <!-- Background photo layer -->
+  <div class="hero-bg-image" id="heroBg"></div>
+
+  <!-- Ambient light orbs -->
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+
   <div class="hero-container">
     <!-- Left: Content -->
     <div class="hero-content reveal">
-      <div class="hero-badge">Notaris & PPAT Bandung Barat</div>
+      <div class="hero-badge">Notaris &amp; PPAT Bandung Barat</div>
       <div class="hero-divider"></div>
       <h1 class="hero-title">
         <span class="hero-title-sub">Kantor Notaris &amp; PPAT</span>
         Mila Kumari,<br>S.H., M.Kn.
       </h1>
       <p class="hero-desc">
-        Layanan kenotariatan dan pertanahan terpercaya di Bandung Barat. Profesional, berintegritas, dan berpengalaman
-        lebih dari 15 tahun melayani masyarakat.
+        Layanan kenotariatan dan pertanahan terpercaya di Bandung Barat. Profesional, berintegritas, dan berpengalaman lebih dari 15 tahun melayani masyarakat dengan dedikasi penuh.
       </p>
       <div class="hero-actions">
         <button onclick="scrollToSection('contact')" class="btn btn-primary">
           <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
           </svg>
           Jadwalkan Konsultasi
         </button>
         <button onclick="scrollToSection('layanan')" class="btn btn-outline">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
           Lihat Layanan
         </button>
       </div>
@@ -41,60 +51,72 @@
           <span class="hero-stat-label">Klien Dilayani</span>
         </div>
         <div class="hero-stat-item">
-          <span class="hero-stat-number" data-count="2" data-suffix="">2</span>
-          <span class="hero-stat-label">Bidang Keahlian</span>
+          <span class="hero-stat-number" data-count="100" data-suffix="%">100%</span>
+          <span class="hero-stat-label">Kepuasan Klien</span>
         </div>
       </div>
     </div>
 
-    <!-- Right: Image -->
+    <!-- Right: Photo -->
     <div class="hero-image-wrap reveal reveal-delay-2">
       <div class="hero-image-frame">
         <img
           src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/mila-kumari-test-hero.webp"
           alt="Notaris & PPAT Mila Kumari, S.H., M.Kn." loading="eager">
+
+        <!-- Floating badge card -->
+        <div class="hero-floating-card">
+          <div class="hero-floating-card-icon">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <div class="hero-floating-card-text">
+            <strong>Terpercaya & Berizin</strong>
+            <span>Notaris SK Menteri Hukum RI</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Scroll hint -->
+  <div class="hero-scroll-hint">Scroll</div>
 </section>
 
 <!-- ==================== SERVICE QUICK LINKS ==================== -->
-<div id="layanan" style="background: var(--cream); padding-top: 1rem;">
+<div id="layanan" class="services-quick-wrap">
   <div class="container">
     <div class="services-quick reveal">
       <div class="services-quick-grid">
-        <div class="service-quick-item" onclick="loadPage('notaris')" role="button">
+        <div class="service-quick-item" onclick="loadPage('notaris')" role="button" tabindex="0">
           <div class="service-icon-wrap">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
             </svg>
           </div>
           <span class="service-quick-label">Layanan Notaris</span>
         </div>
-        <div class="service-quick-item" onclick="loadPage('ppat')" role="button">
+        <div class="service-quick-item" onclick="loadPage('ppat')" role="button" tabindex="0">
           <div class="service-icon-wrap">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
             </svg>
           </div>
           <span class="service-quick-label">Layanan PPAT</span>
         </div>
-        <div class="service-quick-item" onclick="loadPage('lainnya')" role="button">
+        <div class="service-quick-item" onclick="loadPage('lainnya')" role="button" tabindex="0">
           <div class="service-icon-wrap">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
           </div>
           <span class="service-quick-label">Layanan Lainnya</span>
         </div>
-        <div class="service-quick-item" onclick="scrollToSection('contact')" role="button">
+        <div class="service-quick-item" onclick="scrollToSection('contact')" role="button" tabindex="0">
           <div class="service-icon-wrap">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
             </svg>
           </div>
           <span class="service-quick-label">Konsultasi Online</span>
@@ -109,21 +131,19 @@
   <div class="container">
     <div class="profile-grid">
       <!-- Image -->
-      <div class="profile-image-wrap reveal">
+      <div class="profile-image-wrap reveal-left">
         <img
           src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/foto-ibu-mila-kumari-black.webp"
           alt="Profil Notaris Mila Kumari, S.H., M.Kn." loading="lazy">
       </div>
 
       <!-- Content -->
-      <div class="reveal reveal-delay-2">
+      <div class="reveal-right">
         <span class="section-label">Profil Notaris</span>
         <h2 class="section-title font-serif">Mila Kumari, S.H., M.Kn.</h2>
         <div class="section-divider"></div>
         <p class="section-desc" style="margin-bottom: 2rem;">
-          Dengan pengalaman lebih dari 15 tahun sebagai Notaris dan PPAT di Bandung Barat, Mila Kumari telah membangun
-          reputasi yang kuat dalam memberikan layanan hukum berkualitas tinggi dengan integritas dan profesionalisme.
-          Dipercaya oleh 8.000+ klien dalam menangani berbagai kebutuhan hukum.
+          Dengan pengalaman lebih dari 15 tahun sebagai Notaris dan PPAT di Bandung Barat, Mila Kumari telah membangun reputasi yang kuat dalam memberikan layanan hukum berkualitas tinggi dengan integritas dan profesionalisme. Dipercaya oleh 8.000+ klien dalam menangani berbagai kebutuhan hukum.
         </p>
 
         <div style="display: flex; flex-direction: column; gap: 1rem;">
@@ -131,8 +151,7 @@
           <div class="profile-credential">
             <div class="credential-icon">
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422A12.083 12.083 0 0122 12v6a2 2 0 01-2 2H4a2 2 0 01-2-2v-6c0-1.933 1.567-3.5 3.5-3.5S9 8.567 9 10.5" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422A12.083 12.083 0 0122 12v6a2 2 0 01-2 2H4a2 2 0 01-2-2v-6c0-1.933 1.567-3.5 3.5-3.5S9 8.567 9 10.5"/>
               </svg>
             </div>
             <div>
@@ -148,8 +167,7 @@
           <div class="profile-credential">
             <div class="credential-icon">
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
               </svg>
             </div>
             <div>
@@ -161,23 +179,67 @@
             </div>
           </div>
 
-          <!-- Pelatihan -->
+          <!-- Sertifikasi -->
           <div class="profile-credential">
             <div class="credential-icon">
               <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
               </svg>
             </div>
             <div>
-              <div class="credential-title">Pelatihan &amp; Seminar</div>
+              <div class="credential-title">Pelatihan &amp; Sertifikasi</div>
               <div class="credential-body">
-                Aktif mengikuti berbagai pelatihan kenotariatan, perbankan syariah, pasar modal, dan pertanahan untuk
-                terus meningkatkan kompetensi.
+                Aktif mengikuti pelatihan kenotariatan, perbankan syariah, pasar modal, dan pertanahan untuk terus meningkatkan kompetensi profesional.
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHY US SECTION ==================== -->
+<section class="section why-section">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom: 3.5rem;">
+      <span class="section-label">Mengapa Memilih Kami</span>
+      <h2 class="section-title font-serif light">Keunggulan Kami</h2>
+      <div class="section-divider" style="margin: 1rem auto;"></div>
+      <p class="section-desc" style="color: rgba(255,255,255,0.55);">
+        Kami berkomitmen memberikan layanan hukum terbaik dengan standar profesional tertinggi untuk kepercayaan Anda.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <h3 class="why-title">Legalitas Terverifikasi</h3>
+        <p class="why-desc">Terdaftar resmi sebagai Notaris dan PPAT berdasarkan SK Menteri Hukum dan HAM Republik Indonesia. Semua dokumen sah dan berkedudukan hukum.</p>
+      </div>
+
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="why-title">Proses Cepat & Tepat</h3>
+        <p class="why-desc">Pengurusan dokumen yang efisien dan tepat waktu. Kami memahami bahwa waktu Anda sangat berharga dan setiap proses diselesaikan profesional.</p>
+      </div>
+
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <h3 class="why-title">Tim Profesional</h3>
+        <p class="why-desc">Didukung tim staf berpengalaman yang siap melayani dengan ramah dan profesional. Setiap klien mendapatkan perhatian penuh dan layanan personal terbaik.</p>
       </div>
     </div>
   </div>
@@ -203,7 +265,7 @@
 </section>
 
 <!-- ==================== ARTICLES SECTION ==================== -->
-<section class="section" style="background: var(--cream-dark);">
+<section class="section" style="background: var(--cream-2);">
   <div class="container">
     <div class="text-center reveal" style="margin-bottom: 3rem;">
       <span class="section-label">Wawasan Hukum</span>
@@ -215,7 +277,6 @@
     </div>
 
     <div class="articles-grid">
-      <!-- Article 1 -->
       <article class="article-card reveal reveal-delay-1">
         <img class="article-card-image"
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop"
@@ -223,18 +284,16 @@
         <div class="article-card-body">
           <span class="article-badge badge-ppat">PPAT</span>
           <h3 class="article-card-title">Mengenal HGB dan Bedanya dengan SHM</h3>
-          <p class="article-card-excerpt">Pahami perbedaan mendasar antara Sertifikat Hak Guna Bangunan (HGB) dan
-            Sertifikat Hak Milik (SHM)...</p>
+          <p class="article-card-excerpt">Pahami perbedaan mendasar antara Sertifikat Hak Guna Bangunan (HGB) dan Sertifikat Hak Milik (SHM)...</p>
           <a href="/articles/mengenal-hgb-dan-bedanya-dengan-shm.html" class="article-card-link">
             Baca Selengkapnya
             <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
             </svg>
           </a>
         </div>
       </article>
 
-      <!-- Article 2 -->
       <article class="article-card reveal reveal-delay-2">
         <img class="article-card-image"
           src="https://images.unsplash.com/photo-1457694587812-e8bf29a43845?w=600&auto=format&fit=crop&q=60"
@@ -242,18 +301,16 @@
         <div class="article-card-body">
           <span class="article-badge badge-notaris">Notaris</span>
           <h3 class="article-card-title">Akta Otentik vs Akta di Bawah Tangan</h3>
-          <p class="article-card-excerpt">Ketahui perbedaan mendasar antara akta otentik yang dibuat notaris dan akta di
-            bawah tangan...</p>
+          <p class="article-card-excerpt">Ketahui perbedaan mendasar antara akta otentik yang dibuat notaris dan akta di bawah tangan...</p>
           <a href="/articles/perbedaan-akta-otentik-dan-akta-di-bawah-tangan.html" class="article-card-link">
             Baca Selengkapnya
             <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
             </svg>
           </a>
         </div>
       </article>
 
-      <!-- Article 3 -->
       <article class="article-card reveal reveal-delay-3">
         <img class="article-card-image"
           src="https://images.unsplash.com/photo-1621998951482-d096a4c7dee4?w=600&auto=format&fit=crop&q=60"
@@ -261,18 +318,16 @@
         <div class="article-card-body">
           <span class="article-badge badge-tips">Tips</span>
           <h3 class="article-card-title">5 Dokumen Penting Setiap Keluarga</h3>
-          <p class="article-card-excerpt">Dokumen-dokumen legal penting yang sebaiknya dimiliki dan disimpan dengan baik
-            oleh setiap keluarga...</p>
+          <p class="article-card-excerpt">Dokumen-dokumen legal penting yang sebaiknya dimiliki dan disimpan dengan baik oleh setiap keluarga...</p>
           <a href="/articles/5-dokumen-penting-yang-harus-dimiliki-setiap-keluarga.html" class="article-card-link">
             Baca Selengkapnya
             <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
             </svg>
           </a>
         </div>
       </article>
 
-      <!-- Article 4 -->
       <article class="article-card reveal reveal-delay-4">
         <img class="article-card-image"
           src="https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=600&auto=format&fit=crop"
@@ -280,12 +335,11 @@
         <div class="article-card-body">
           <span class="article-badge badge-hukum">Hukum</span>
           <h3 class="article-card-title">Memahami Hukum Waris di Indonesia</h3>
-          <p class="article-card-excerpt">Panduan lengkap hukum waris di Indonesia, mencakup hukum perdata (BW), hukum
-            Islam, dan hukum Adat...</p>
+          <p class="article-card-excerpt">Panduan lengkap hukum waris di Indonesia, mencakup hukum perdata (BW), hukum Islam, dan hukum Adat...</p>
           <a href="/articles/hukum-waris-di-indonesia-panduan-lengkap.html" class="article-card-link">
             Baca Selengkapnya
             <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
             </svg>
           </a>
         </div>
@@ -296,7 +350,7 @@
       <button onclick="loadPage('artikel')" class="btn btn-outline-gold">
         Lihat Semua Artikel
         <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
         </svg>
       </button>
     </div>
@@ -322,23 +376,20 @@
           <div class="contact-info-item">
             <div class="contact-info-icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
               </svg>
             </div>
             <div>
               <div class="contact-info-label">Alamat</div>
-              <div class="contact-info-value">Jl. Raya Nasional No.199, Cimareme,<br>Kec. Ngamprah, Kab. Bandung Barat
-                40552</div>
+              <div class="contact-info-value">Jl. Raya Nasional No.199, Cimareme,<br>Kec. Ngamprah, Kab. Bandung Barat 40552</div>
             </div>
           </div>
 
           <div class="contact-info-item">
             <div class="contact-info-icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
               </svg>
             </div>
             <div>
@@ -350,8 +401,7 @@
           <div class="contact-info-item">
             <div class="contact-info-icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
               </svg>
             </div>
             <div>
@@ -363,8 +413,8 @@
           <div class="contact-info-item">
             <div class="contact-info-icon">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
               </svg>
             </div>
             <div>
@@ -374,29 +424,20 @@
           </div>
         </div>
 
-        <!-- Socials -->
         <div class="contact-socials">
-          <a href="https://www.facebook.com/notaris.ppat.mila.kumari/" target="_blank" rel="noopener" class="social-btn"
-            aria-label="Facebook">
+          <a href="https://www.facebook.com/notaris.ppat.mila.kumari/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
             <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd"
-                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                clip-rule="evenodd" />
+              <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/>
             </svg>
           </a>
-          <a href="https://www.instagram.com/notarisppatmilakumari/" target="_blank" rel="noopener" class="social-btn"
-            aria-label="Instagram">
+          <a href="https://www.instagram.com/notarisppatmilakumari/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
             <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd"
-                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                clip-rule="evenodd" />
+              <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/>
             </svg>
           </a>
-          <a href="https://wa.me/6282217259555?text=Halo%20Notaris%2C%20perkenalkan%20saya%20%3A%0A%0ANama%20%3A%20%0ALokasi%20%3A%20%0APertanyaan%20%3A%20%0A%0ATerimakasih%20atas%20bantuannya."
-            target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
+          <a href="https://wa.me/6282217259555" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
             <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
           </a>
         </div>
@@ -404,26 +445,21 @@
 
       <!-- Form -->
       <div class="contact-form-card reveal reveal-delay-2">
-        <h3
-          style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--text-dark); margin-bottom: 1.75rem;">
-          Kirim Pesan</h3>
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--text-dark); margin-bottom: 1.75rem;">Kirim Pesan</h3>
         <form id="contactForm"
           action="https://script.google.com/macros/s/AKfycbz2yZg24hwpNS_6OSMLOI05s6r8c_QtOqJtaBU0WTl9jnTvhrsf8WJgSxvV_c6NLkVvDg/exec"
           method="POST">
           <div class="form-group">
             <label for="name" class="form-label">Nama Lengkap</label>
-            <input type="text" id="name" name="name" class="form-input" placeholder="Masukkan nama lengkap Anda"
-              required>
+            <input type="text" id="name" name="name" class="form-input" placeholder="Masukkan nama lengkap Anda" required>
           </div>
           <div class="form-group">
             <label for="email" class="form-label">Email</label>
-            <input type="email" id="email" name="email" class="form-input" placeholder="Masukkan alamat email Anda"
-              required>
+            <input type="email" id="email" name="email" class="form-input" placeholder="Masukkan alamat email Anda" required>
           </div>
           <div class="form-group">
             <label for="phone" class="form-label">Nomor Telepon</label>
-            <input type="tel" id="phone" name="phone" class="form-input" placeholder="Masukkan nomor telepon Anda"
-              required>
+            <input type="tel" id="phone" name="phone" class="form-input" placeholder="Masukkan nomor telepon Anda" required>
           </div>
           <div class="form-group">
             <label for="service" class="form-label">Layanan yang Dibutuhkan</label>
@@ -437,8 +473,7 @@
           </div>
           <div class="form-group">
             <label for="message" class="form-label">Pesan</label>
-            <textarea id="message" name="message" rows="4" class="form-textarea"
-              placeholder="Tuliskan pesan atau pertanyaan Anda" required></textarea>
+            <textarea id="message" name="message" rows="4" class="form-textarea" placeholder="Tuliskan pesan atau pertanyaan Anda" required></textarea>
           </div>
           <button type="submit" class="btn-submit">Kirim Pesan</button>
         </form>
@@ -459,3 +494,31 @@
     </div>
   </div>
 </section>
+
+<script>
+// Hero background kenotic animation
+(function() {
+  const bg = document.getElementById('heroBg');
+  if (bg) {
+    setTimeout(() => bg.classList.add('loaded'), 100);
+  }
+
+  // Add reveal-left and reveal-right to scroll observer
+  const allReveal = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  if (window._revealObserverFn) {
+    allReveal.forEach(el => {
+      if (!el.classList.contains('visible')) {
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+              obs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        obs.observe(el);
+      }
+    });
+  }
+})();
+</script>
