@@ -2209,7 +2209,7 @@ ul {
 .lf-hero {
   position: relative;
   min-height: 100vh;
-  background: #14315c;
+  background: linear-gradient(180deg, #14315c 0%, #1a3f70 40%, #6b93bf 78%, #ddeaf6 100%);
   display: flex;
   align-items: stretch;
   overflow: hidden;
@@ -2223,17 +2223,21 @@ ul {
   background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&auto=format&fit=crop&q=60');
   background-size: cover;
   background-position: center;
-  opacity: 0.07;
+  opacity: 0.06;
   pointer-events: none;
   z-index: 0;
 }
 
-/* Overlay gelap agar teks tetap terbaca */
+/* Overlay gradasi biru ke putih - memperkuat efek fade */
 .lf-hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(100deg, rgba(20, 49, 92, 0.82) 0%, rgba(20, 49, 92, 0.45) 60%, rgba(20, 49, 92, 0.65) 100%);
+  background: linear-gradient(180deg,
+      rgba(27, 65, 122, 0.55) 0%,
+      rgba(20, 49, 92, 0.35) 50%,
+      rgba(255, 255, 255, 0.18) 85%,
+      rgba(255, 255, 255, 0.35) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -2747,7 +2751,7 @@ ul {
 
 /* ---- PRACTICE AREAS ---- */
 .lf-practice {
-  background: #14315c;
+  background: linear-gradient(180deg, #14315c 0%, #1a3f70 35%, #6b93bf 72%, #ddeaf6 100%);
   padding: 6.5rem 0;
   position: relative;
   overflow: hidden;
@@ -2765,18 +2769,22 @@ ul {
   pointer-events: none;
 }
 
-/* Overlay warna solid atas foto */
+/* Overlay gradasi biru ke putih */
 .lf-practice::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(20, 49, 92, 0.78);
+  background: linear-gradient(180deg,
+      rgba(20, 49, 92, 0.55) 0%,
+      rgba(20, 49, 92, 0.30) 55%,
+      rgba(65, 117, 230, 0.15) 85%,
+      rgba(75, 153, 243, 0.32) 100%);
   pointer-events: none;
 }
 
 .lf-practice-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
   margin-top: 3rem;
   position: relative;
@@ -2793,6 +2801,7 @@ ul {
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
 .lf-practice-card::after {
@@ -2802,7 +2811,7 @@ ul {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, var(--gold), transparent);
   transform: scaleX(0);
   transition: transform 0.4s var(--ease);
 }
@@ -2811,7 +2820,7 @@ ul {
   background: rgba(201, 168, 76, 0.07);
   border-color: rgba(201, 168, 76, 0.35);
   transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
 }
 
 .lf-practice-card:hover::after {
@@ -2961,7 +2970,7 @@ ul {
 
 /* ---- ARTICLES SECTION ---- */
 .lf-articles {
-  background: #14315c;
+  background: linear-gradient(180deg, #14315c 0%, #1a3f70 35%, #6b93bf 72%, #ddeaf6 100%);
   padding: 6.5rem 0;
   position: relative;
   overflow: hidden;
@@ -2979,12 +2988,16 @@ ul {
   pointer-events: none;
 }
 
-/* Overlay warna solid */
+/* Overlay gradasi biru ke putih */
 .lf-articles::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(20, 49, 92, 0.82);
+  background: linear-gradient(180deg,
+      rgba(20, 49, 92, 0.58) 0%,
+      rgba(20, 49, 92, 0.32) 55%,
+      rgba(255, 255, 255, 0.15) 85%,
+      rgba(255, 255, 255, 0.35) 100%);
   pointer-events: none;
 }
 
@@ -3246,7 +3259,7 @@ ul {
   }
 
   .lf-practice-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .lf-contact-grid {
@@ -3277,7 +3290,7 @@ ul {
   }
 
   .lf-practice-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.85rem;
   }
 
@@ -3295,6 +3308,10 @@ ul {
 
   .lf-practice {
     padding: 4.5rem 0;
+  }
+
+  .lf-practice-name {
+    font-size: 0.8rem;
   }
 
   .lf-partner {
