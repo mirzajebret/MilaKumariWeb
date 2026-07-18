@@ -181,11 +181,11 @@ ul {
 .nav-logo-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 .nav-logo-text .line1 {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.15em;
   color: var(--gold);
