@@ -1732,7 +1732,6 @@ ul {
 }
 
 .footer-map {
-  border-radius: var(--radius);
   overflow: hidden;
   height: 200px;
   border: 1px solid rgba(201, 168, 76, 0.1);
