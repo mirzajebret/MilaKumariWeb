@@ -224,7 +224,167 @@ function initPageFeatures() {
     card.addEventListener('mouseenter', () => card.style.transform = 'translateY(-5px)');
     card.addEventListener('mouseleave', () => card.style.transform = '');
   });
+
+  // Init gallery if on galeri page
+  initGallery();
 }
+
+// ============================================================
+//  GALLERY — Lightbox & Load More
+// ============================================================
+const GALLERY_PER_PAGE = 8;
+let galleryImages     = [];   // [{src, title, desc}] dari item yang visible
+let lightboxIndex     = 0;
+let galleryPage       = 1;
+let allGalleryItems   = [];
+
+function initGallery() {
+  const grid = document.getElementById('galleryGrid');
+  if (!grid) return;
+
+  // Reset state setiap kali galeri diinisialisasi
+  galleryPage     = 1;
+  galleryImages   = [];
+  lightboxIndex   = 0;
+
+  allGalleryItems = Array.from(grid.querySelectorAll('.gallery-item'));
+  if (!allGalleryItems.length) return;
+
+  // Sembunyikan item di luar halaman pertama
+  applyGalleryPagination();
+
+  // Tutup lightbox jika klik overlay luar
+  const modal = document.getElementById('lightboxModal');
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeLightbox();
+    });
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', handleLightboxKeydown);
+}
+
+function handleLightboxKeydown(e) {
+  const modal = document.getElementById('lightboxModal');
+  if (!modal || modal.classList.contains('hidden')) return;
+  if (e.key === 'Escape')      closeLightbox();
+  if (e.key === 'ArrowRight')  nextImage();
+  if (e.key === 'ArrowLeft')   previousImage();
+}
+
+function applyGalleryPagination() {
+  const visibleItems = allGalleryItems.filter(item => {
+    const activeFilter = document.querySelector('.gallery-filter-btn.active');
+    if (!activeFilter) return true;
+    const cat = activeFilter.dataset.filter;
+    return cat === 'all' || item.dataset.category === cat;
+  });
+
+  visibleItems.forEach((item, i) => {
+    item.style.display = i < GALLERY_PER_PAGE * galleryPage ? '' : 'none';
+  });
+
+  // Sembunyikan/tampilkan tombol load more
+  const btn = document.querySelector('[onclick="loadMoreImages()"]');
+  if (btn) {
+    const remaining = visibleItems.length - GALLERY_PER_PAGE * galleryPage;
+    btn.parentElement.style.display = remaining > 0 ? '' : 'none';
+  }
+}
+
+function buildImageList() {
+  const grid = document.getElementById('galleryGrid');
+  if (!grid) return [];
+  return Array.from(grid.querySelectorAll('.gallery-item'))
+    .filter(item => item.style.display !== 'none')
+    .map(item => {
+      // Ambil data dari onclick attribute
+      const onclickStr = item.getAttribute('onclick') || '';
+      const match = onclickStr.match(/openLightbox\('([^']*)',\s*'([^']*)',\s*'([^']*)'\)/);
+      if (match) {
+        return { src: match[1], title: match[2], desc: match[3] };
+      }
+      // Fallback dari img tag
+      const img = item.querySelector('img');
+      return { src: img ? img.src : '', title: '', desc: '' };
+    });
+}
+
+window.openLightbox = function (src, title, desc) {
+  const modal = document.getElementById('lightboxModal');
+  const imgEl = document.getElementById('lightboxImage');
+  const titleEl = document.getElementById('lightboxTitle');
+  const descEl  = document.getElementById('lightboxDescription');
+  if (!modal || !imgEl) return;
+
+  // Bangun daftar semua gambar yang terlihat
+  galleryImages = buildImageList();
+  lightboxIndex = galleryImages.findIndex(img => img.src === src);
+  if (lightboxIndex === -1) lightboxIndex = 0;
+
+  imgEl.src = src;
+  imgEl.alt = title;
+  if (titleEl) titleEl.textContent = title;
+  if (descEl)  descEl.textContent  = desc;
+
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+};
+
+window.closeLightbox = function () {
+  const modal = document.getElementById('lightboxModal');
+  if (!modal) return;
+  modal.classList.add('hidden');
+  document.body.style.overflow = '';
+};
+
+window.nextImage = function () {
+  if (!galleryImages.length) return;
+  lightboxIndex = (lightboxIndex + 1) % galleryImages.length;
+  updateLightboxContent();
+};
+
+window.previousImage = function () {
+  if (!galleryImages.length) return;
+  lightboxIndex = (lightboxIndex - 1 + galleryImages.length) % galleryImages.length;
+  updateLightboxContent();
+};
+
+function updateLightboxContent() {
+  const { src, title, desc } = galleryImages[lightboxIndex];
+  const imgEl   = document.getElementById('lightboxImage');
+  const titleEl = document.getElementById('lightboxTitle');
+  const descEl  = document.getElementById('lightboxDescription');
+
+  if (imgEl)   { imgEl.src = src; imgEl.alt = title; }
+  if (titleEl) titleEl.textContent = title;
+  if (descEl)  descEl.textContent  = desc;
+}
+
+window.loadMoreImages = function () {
+  galleryPage += 1;
+  applyGalleryPagination();
+};
+
+window.filterGallery = function (category) {
+  galleryPage = 1; // reset ke halaman pertama saat filter berubah
+
+  allGalleryItems.forEach(item => {
+    if (category === 'all' || item.dataset.category === category) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  applyGalleryPagination();
+
+  // Update active button style
+  document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.filter === category);
+  });
+};
 
 // ============================================================
 //  CONTACT FORM
