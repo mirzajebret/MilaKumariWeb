@@ -1,0 +1,107 @@
+[
+  {
+    "src": "../asset/galeri/konsultasi-penandatanganan-akta-klien.jpeg",
+    "alt": "Proses konsultasi dan penandatanganan akta bersama klien",
+    "title": "Konsultasi & Penandatanganan Akta",
+    "description": "Proses konsultasi dan penandatanganan akta dengan klien di kantor Notaris & PPAT Mila Kumari.",
+    "category": "kantor"
+  },
+  {
+    "src": "../asset/galeri/konsultasi-penandatanganan-dokumen-kantor.jpeg",
+    "alt": "Penandatanganan dokumen resmi di kantor Notaris Mila Kumari",
+    "title": "Penandatanganan Dokumen di Kantor",
+    "description": "Proses penandatanganan dokumen resmi di ruang kerja Kantor Notaris & PPAT Mila Kumari.",
+    "category": "kantor"
+  },
+  {
+    "src": "../asset/galeri/pelayanan-akta-kantor-mila-kumari.jpeg",
+    "alt": "Penyerahan akta kepada klien di kantor Notaris Mila Kumari",
+    "title": "Pelayanan Akta di Kantor",
+    "description": "Penyerahan akta kepada klien di resepsionis Kantor Notaris & PPAT Mila Kumari.",
+    "category": "kantor"
+  },
+  {
+    "src": "../asset/galeri/penyerahan-akta-kecamatan-gununghaalu.jpeg",
+    "alt": "Penyerahan akta resmi di Kecamatan Gununghalu Kabupaten Bandung Barat",
+    "title": "Penyerahan Akta di Kecamatan Gununghalu",
+    "description": "Penyerahan akta resmi kepada masyarakat di Kantor Kecamatan Gununghalu, Kabupaten Bandung Barat.",
+    "category": "kantor"
+  },
+  {
+    "src": "../asset/galeri/workshop-sosialisasi-regulasi-kenotarisan.jpeg",
+    "alt": "Workshop Sosialisasi Regulasi Kenotarisan INI Kabupaten Bandung Barat",
+    "title": "Workshop Sosialisasi Regulasi Kenotarisan",
+    "description": "Keikutsertaan dalam Workshop Sosialisasi Regulasi Kenotarisan dan Pelatihan Pengisian Laporan yang diselenggarakan Ikatan Notaris Indonesia Kab. Bandung Barat.",
+    "category": "kegiatan"
+  },
+  {
+    "src": "../asset/galeri/diskusi-hukum-coretax-notaris-ppat.jpeg",
+    "alt": "Diskusi Hukum Coretax dan Permen Hukum untuk Notaris dan PPAT KBB",
+    "title": "Diskusi Hukum Coretax Notaris & PPAT",
+    "description": "Keikutsertaan dalam Diskusi Hukum memahami Coretax dalam pengisian SPT, implementasi Permen Hukum No. 49 Tahun 2026, diselenggarakan Pengda KBB INI & IPPAT.",
+    "category": "kegiatan"
+  },
+  {
+    "src": "../asset/galeri/peserta-rapat-anggota-ippat-kbb.jpeg",
+    "alt": "Peserta rapat anggota IPPAT Kabupaten Bandung Barat",
+    "title": "Peserta Rapat Anggota IPPAT KBB",
+    "description": "Para peserta Rapat Anggota Ikatan Pejabat Pembuat Akta Tanah Kabupaten Bandung Barat.",
+    "category": "kegiatan"
+  },
+  {
+    "src": "../asset/galeri/rapat-anggota-ippat-kbb-forum.jpeg",
+    "alt": "Forum Rapat Anggota IPPAT Pengurus Daerah Kabupaten Bandung Barat",
+    "title": "Rapat Anggota IPPAT KBB",
+    "description": "Forum Rapat Anggota Ikatan Pejabat Pembuat Akta Tanah Pengurus Daerah Kabupaten Bandung Barat.",
+    "category": "kegiatan"
+  },
+  {
+    "src": "../asset/galeri/pengesahan-koperasi-desa-merah-putih-kbb.jpeg",
+    "alt": "Pengesahan Badan Hukum Koperasi Desa Merah Putih Kabupaten Bandung Barat",
+    "title": "Pengesahan Koperasi Desa Merah Putih KBB",
+    "description": "Kegiatan Pengesahan Badan Hukum Koperasi Desa Merah Putih Kabupaten Bandung Barat yang sudah mencapai 100%.",
+    "category": "kegiatan"
+  },
+  {
+    "src": "../asset/galeri/penyerahan-dokumen-koperasi-desa-bupati-kbb.jpeg",
+    "alt": "Seremoni penyerahan dokumen Koperasi Desa Merah Putih kepada Bupati Bandung Barat",
+    "title": "Penyerahan Dokumen Koperasi kepada Bupati KBB",
+    "description": "Seremoni penyerahan dokumen pengesahan Koperasi Desa Merah Putih kepada Bupati Kabupaten Bandung Barat.",
+    "category": "kegiatan"
+  },
+  {
+    "src": "../asset/galeri/musyawarah-desa-koperasi-merah-putih.jpeg",
+    "alt": "Musyawarah Desa Khusus Pembentukan Koperasi Merah Putih Desa Weninggalih",
+    "title": "Musdesus Koperasi Merah Putih",
+    "description": "Keikutsertaan dalam Musyawarah Desa Khusus (Musdesus) Pembentukan Koperasi Merah Putih Desa Weninggalih, Kec. Sindangkerta, Kab. Bandung Barat.",
+    "category": "kegiatan"
+  },
+  {
+    "src": "../asset/galeri/konferensi-daerah-luar-biasa-ippat-kbb.jpeg",
+    "alt": "Konferensi Daerah Luar Biasa IPPAT Kabupaten Bandung Barat",
+    "title": "Konferensi Daerah Luar Biasa IPPAT KBB",
+    "description": "Keikutsertaan dalam Konferensi Daerah Luar Biasa Ikatan Pejabat Pembuat Akta Tanah Pengurus Daerah Kabupaten Bandung Barat.",
+    "category": "kegiatan"
+  },
+  {
+    "src": "../asset/galeri/konferensi-daerah-ippat-kbb-2024-2027.jpeg",
+    "alt": "Konferensi Daerah IPPAT KBB Pemilihan Ketua Pengurus Periode 2024-2027",
+    "title": "Konferensi Daerah IPPAT KBB 2024–2027",
+    "description": "Pemilihan Ketua Pengurus Daerah dan Anggota Majelis Kehormatan Daerah KBB IPPAT Periode 2024-2027.",
+    "category": "kegiatan"
+  },
+  {
+    "src": "../asset/galeri/sambutan-konferensi-daerah-ippat-kbb.jpeg",
+    "alt": "Sambutan pada Konferensi Daerah IPPAT KBB periode 2024-2027",
+    "title": "Sambutan Konferensi Daerah IPPAT KBB",
+    "description": "Pemberian sambutan pada Konferensi Daerah Pemilihan Ketua Pengurus Daerah KBB IPPAT Periode 2024-2027.",
+    "category": "kegiatan"
+  },
+  {
+    "src": "../asset/galeri/pelantikan-pembekalan-mkd-ippat-gedung-sate.jpeg",
+    "alt": "Pelantikan dan Pembekalan MKD IPPAT se-Jawa Barat di Gedung Sate Bandung 2025",
+    "title": "Pelantikan MKD IPPAT Gedung Sate 2025",
+    "description": "Pelantikan dan Pembekalan Majelis Kehormatan Daerah Ikatan Pejabat Pembuat Akta Tanah Kota/Kabupaten se-Jawa Barat Periode 2024-2027 di Gedung Sate Bandung, 15 Februari 2025.",
+    "category": "kegiatan"
+  }
+]

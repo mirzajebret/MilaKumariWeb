@@ -230,103 +230,111 @@ function initPageFeatures() {
 }
 
 // ============================================================
-//  GALLERY — Lightbox & Load More
+//  GALLERY — JSON-driven render loop
 // ============================================================
 const GALLERY_PER_PAGE = 8;
-let galleryImages     = [];   // [{src, title, desc}] dari item yang visible
-let lightboxIndex     = 0;
-let galleryPage       = 1;
-let allGalleryItems   = [];
+let galleryData     = [];   // data dari galeri.json
+let lightboxIndex   = 0;
+let galleryPage     = 1;
 
 function initGallery() {
   const grid = document.getElementById('galleryGrid');
   if (!grid) return;
 
-  // Reset state setiap kali galeri diinisialisasi
-  galleryPage     = 1;
-  galleryImages   = [];
-  lightboxIndex   = 0;
+  // Reset state setiap kali galeri dibuka
+  galleryPage   = 1;
+  lightboxIndex = 0;
+  galleryData   = [];
 
-  allGalleryItems = Array.from(grid.querySelectorAll('.gallery-item'));
-  if (!allGalleryItems.length) return;
-
-  // Sembunyikan item di luar halaman pertama
-  applyGalleryPagination();
-
-  // Tutup lightbox jika klik overlay luar
-  const modal = document.getElementById('lightboxModal');
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeLightbox();
+  // Fetch data JSON relatif terhadap root (index.html ada di root)
+  fetch('data/galeri.json')
+    .then(res => {
+      if (!res.ok) throw new Error('Gagal memuat data/galeri.json');
+      return res.json();
+    })
+    .then(data => {
+      galleryData = data;
+      renderGalleryCards();
+      updateLoadMoreBtn();
+      attachGalleryEvents();
+    })
+    .catch(err => {
+      console.error(err);
+      if (grid) grid.innerHTML = '<p class="text-gray-500 col-span-4 text-center">Gagal memuat galeri.</p>';
     });
-  }
-
-  // Keyboard navigation
-  document.addEventListener('keydown', handleLightboxKeydown);
 }
 
-function handleLightboxKeydown(e) {
-  const modal = document.getElementById('lightboxModal');
-  if (!modal || modal.classList.contains('hidden')) return;
-  if (e.key === 'Escape')      closeLightbox();
-  if (e.key === 'ArrowRight')  nextImage();
-  if (e.key === 'ArrowLeft')   previousImage();
-}
-
-function applyGalleryPagination() {
-  const visibleItems = allGalleryItems.filter(item => {
-    const activeFilter = document.querySelector('.gallery-filter-btn.active');
-    if (!activeFilter) return true;
-    const cat = activeFilter.dataset.filter;
-    return cat === 'all' || item.dataset.category === cat;
-  });
-
-  visibleItems.forEach((item, i) => {
-    item.style.display = i < GALLERY_PER_PAGE * galleryPage ? '' : 'none';
-  });
-
-  // Sembunyikan/tampilkan tombol load more
-  const btn = document.querySelector('[onclick="loadMoreImages()"]');
-  if (btn) {
-    const remaining = visibleItems.length - GALLERY_PER_PAGE * galleryPage;
-    btn.parentElement.style.display = remaining > 0 ? '' : 'none';
-  }
-}
-
-function buildImageList() {
+function renderGalleryCards() {
   const grid = document.getElementById('galleryGrid');
-  if (!grid) return [];
-  return Array.from(grid.querySelectorAll('.gallery-item'))
-    .filter(item => item.style.display !== 'none')
-    .map(item => {
-      // Ambil data dari onclick attribute
-      const onclickStr = item.getAttribute('onclick') || '';
-      const match = onclickStr.match(/openLightbox\('([^']*)',\s*'([^']*)',\s*'([^']*)'\)/);
-      if (match) {
-        return { src: match[1], title: match[2], desc: match[3] };
-      }
-      // Fallback dari img tag
-      const img = item.querySelector('img');
-      return { src: img ? img.src : '', title: '', desc: '' };
-    });
+  if (!grid) return;
+
+  grid.innerHTML = galleryData.map((item, index) => `
+    <div class="gallery-item"
+         data-index="${index}"
+         data-category="${item.category}"
+         style="${index >= GALLERY_PER_PAGE ? 'display:none' : ''}"
+         onclick="openLightbox(${index})">
+      <div class="relative group cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+        <img
+          src="${item.src}"
+          alt="${item.alt}"
+          class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+          <h3 class="text-white font-medium text-sm leading-snug">${item.title}</h3>
+        </div>
+      </div>
+    </div>
+  `).join('');
 }
 
-window.openLightbox = function (src, title, desc) {
+function updateLoadMoreBtn() {
+  const wrapper = document.getElementById('loadMoreWrapper');
+  if (!wrapper) return;
+  const totalShown = GALLERY_PER_PAGE * galleryPage;
+  wrapper.style.display = totalShown < galleryData.length ? '' : 'none';
+}
+
+function attachGalleryEvents() {
+  // Klik overlay gelap → tutup lightbox
   const modal = document.getElementById('lightboxModal');
-  const imgEl = document.getElementById('lightboxImage');
+  if (modal && !modal._galeriListenerAttached) {
+    modal.addEventListener('click', e => { if (e.target === modal) closeLightbox(); });
+    modal._galeriListenerAttached = true;
+  }
+  // Keyboard: Esc, ArrowLeft, ArrowRight (cegah duplikat)
+  if (!window._galeriKeyListenerAttached) {
+    document.addEventListener('keydown', e => {
+      const m = document.getElementById('lightboxModal');
+      if (!m || m.classList.contains('hidden')) return;
+      if (e.key === 'Escape')     closeLightbox();
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft')  previousImage();
+    });
+    window._galeriKeyListenerAttached = true;
+  }
+}
+
+// --- Lightbox ---
+window.openLightbox = function (index) {
+  const modal   = document.getElementById('lightboxModal');
+  const imgEl   = document.getElementById('lightboxImage');
   const titleEl = document.getElementById('lightboxTitle');
   const descEl  = document.getElementById('lightboxDescription');
-  if (!modal || !imgEl) return;
+  if (!modal || !imgEl || !galleryData.length) return;
 
-  // Bangun daftar semua gambar yang terlihat
-  galleryImages = buildImageList();
-  lightboxIndex = galleryImages.findIndex(img => img.src === src);
-  if (lightboxIndex === -1) lightboxIndex = 0;
-
-  imgEl.src = src;
-  imgEl.alt = title;
-  if (titleEl) titleEl.textContent = title;
-  if (descEl)  descEl.textContent  = desc;
+  lightboxIndex = index;
+  const item = galleryData[lightboxIndex];
+  imgEl.src   = item.src;
+  imgEl.alt   = item.alt;
+  if (titleEl) titleEl.textContent = item.title;
+  if (descEl)  descEl.textContent  = item.description;
 
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
@@ -340,47 +348,46 @@ window.closeLightbox = function () {
 };
 
 window.nextImage = function () {
-  if (!galleryImages.length) return;
-  lightboxIndex = (lightboxIndex + 1) % galleryImages.length;
-  updateLightboxContent();
+  if (!galleryData.length) return;
+  lightboxIndex = (lightboxIndex + 1) % galleryData.length;
+  _updateLightboxUI();
 };
 
 window.previousImage = function () {
-  if (!galleryImages.length) return;
-  lightboxIndex = (lightboxIndex - 1 + galleryImages.length) % galleryImages.length;
-  updateLightboxContent();
+  if (!galleryData.length) return;
+  lightboxIndex = (lightboxIndex - 1 + galleryData.length) % galleryData.length;
+  _updateLightboxUI();
 };
 
-function updateLightboxContent() {
-  const { src, title, desc } = galleryImages[lightboxIndex];
+function _updateLightboxUI() {
+  const item    = galleryData[lightboxIndex];
   const imgEl   = document.getElementById('lightboxImage');
   const titleEl = document.getElementById('lightboxTitle');
   const descEl  = document.getElementById('lightboxDescription');
-
-  if (imgEl)   { imgEl.src = src; imgEl.alt = title; }
-  if (titleEl) titleEl.textContent = title;
-  if (descEl)  descEl.textContent  = desc;
+  if (imgEl)   { imgEl.src = item.src; imgEl.alt = item.alt; }
+  if (titleEl) titleEl.textContent = item.title;
+  if (descEl)  descEl.textContent  = item.description;
 }
 
+// --- Load More ---
 window.loadMoreImages = function () {
   galleryPage += 1;
-  applyGalleryPagination();
+  const limit = GALLERY_PER_PAGE * galleryPage;
+  document.querySelectorAll('#galleryGrid .gallery-item').forEach((el, i) => {
+    el.style.display = i < limit ? '' : 'none';
+  });
+  updateLoadMoreBtn();
 };
 
+// --- Filter (siap pakai jika ada tombol filter) ---
 window.filterGallery = function (category) {
-  galleryPage = 1; // reset ke halaman pertama saat filter berubah
-
-  allGalleryItems.forEach(item => {
-    if (category === 'all' || item.dataset.category === category) {
-      item.style.display = '';
-    } else {
-      item.style.display = 'none';
-    }
+  galleryPage = 1;
+  let shown = 0;
+  document.querySelectorAll('#galleryGrid .gallery-item').forEach(el => {
+    const match = category === 'all' || el.dataset.category === category;
+    el.style.display = (match && shown < GALLERY_PER_PAGE) ? (shown++, '') : 'none';
   });
-
-  applyGalleryPagination();
-
-  // Update active button style
+  updateLoadMoreBtn();
   document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.filter === category);
   });
