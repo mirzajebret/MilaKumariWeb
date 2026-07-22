@@ -153,7 +153,7 @@ body.article-page main {
 }
 
 .navbar.navbar-default {
-  background: rgba(6, 14, 30, 0.96);
+  background: rgb(24 51 105 / 96%);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(201, 168, 76, 0.15);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
@@ -289,7 +289,7 @@ body.article-page main {
 
 .mobile-menu {
   display: none;
-  background: rgba(6, 14, 30, 0.98);
+  background: rgb(236 243 255 / 10%);
   backdrop-filter: blur(24px);
   border-top: 1px solid rgba(201, 168, 76, 0.15);
   padding: 1rem 0 1.5rem;
@@ -1905,6 +1905,7 @@ body.article-page main {
 .loaded {
   opacity: 1;
   transform: translateY(0);
+  background: linear-gradient(180deg, #14315c 0%, #1a3f70 35%, #6b93bf 72%, #ddeaf6 100%)
 }
 
 /* CTA */
