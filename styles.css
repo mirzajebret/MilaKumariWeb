@@ -3352,7 +3352,7 @@ body.article-page main {
 
   /* Sesuaikan warna fade gradient di mobile (lebih ke awal hero section) */
   .lf-hero-photo::after {
-    background: linear-gradient(to top, #14315c 0%, rgba(20, 49, 92, 0.6) 50%, transparent 100%);
+
     height: 100px;
   }
 
