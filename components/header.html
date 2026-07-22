@@ -1,62 +1,40 @@
-<nav class="bg-brand-bg/95 backdrop-blur-sm shadow-sm fixed w-full top-0 z-50">
-  <div class="container mx-auto px-4 md:px-8">
-    <div class="flex justify-between items-center py-4">
-      <!-- Logo -->
-      <div class="flex items-center gap-3 cursor-pointer" onclick="loadPage('home')">
-        <img src="/asset/mk-6835754b4efb4.webp" alt="Logo Mila Kumari" class="md:h-12 md:w-12 h-8 w-8 mr-4">
-        <div class="font-bold text-sm leading-tight text-brand-text">
-          <p>KANTOR NOTARIS & PPAT</p>
-          <p>MILA KUMARI</p>
-        </div>
-      </div>
-
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center gap-8 text-brand-gray">
-
-        <a href="#" onclick="scrollToSection('layanan')"
-          class="block py-2 text-brand-gray hover:text-brand-text">Layanan</a>
-        <a href="#" onclick="scrollToSection('profil-notaris')"
-          class="block py-2 text-brand-gray hover:text-brand-text">Tentang</a>
-        <a href="#" onclick="scrollToSection('contact')"
-          class="block py-2 text-brand-gray hover:text-brand-text">Kontak</a>
-        <a href="#" onclick="loadPage('galeri')" class="block py-2 text-brand-gray hover:text-brand-text">Galeri</a>
-        <a href="#" onclick="loadPage('artikel')" class="block py-2 text-brand-gray hover:text-brand-text">Artikel</a>
-      </div>
-
-      <div class="hidden md:block">
-        <button onclick="scrollToSection('contact')"
-          class="bg-brand-gold text-white px-6 py-2 font-bold hover:bg-opacity-90 transition-colors">
-          Buat Janji
-        </button>
-      </div>
-
-
-      <!-- Mobile Menu Button -->
-      <div class="md:hidden">
-        <button id="mobileMenuBtn" class="text-brand-text focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
+<nav class="navbar navbar-default" id="mainNav">
+  <div class="navbar-inner">
+    <!-- Logo -->
+    <div class="nav-logo" onclick="window.location.href='../index.html'" role="button" aria-label="Beranda">
+      <img
+        src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/mk-6835754b4efb4.webp"
+        alt="Logo Mila Kumari" width="44" height="44">
+      <div class="nav-logo-text">
+        <span class="line1">Kantor Notaris &amp; PPAT</span>
+        <span class="line2">Mila Kumari, S.H., M.Kn.</span>
       </div>
     </div>
 
-    <!-- Mobile Navigation -->
-    <div id="mobileMenu" class="md:hidden hidden pb-4 text-center">
-      <div class="flex flex-col space-y-2">
-        <a href="#" onclick="scrollToSection('layanan')"
-          class="block py-2 text-brand-gray hover:text-brand-text">Layanan</a>
-        <a href="#" onclick="scrollToSection('profil-notaris')"
-          class="block py-2 text-brand-gray hover:text-brand-text">Tentang</a>
-        <a href="#" onclick="scrollToSection('contact')"
-          class="block py-2 text-brand-gray hover:text-brand-text">Kontak</a>
-        <a href="#" onclick="loadPage('galeri')" class="block py-2 text-brand-gray hover:text-brand-text">Galeri</a>
-        <a href="#" onclick="loadPage('artikel')" class="block py-2 text-brand-gray hover:text-brand-text">Artikel</a>
-        <button onclick="scrollToSection('contact')"
-          class="w-full mt-2 bg-brand-gold text-white px-6 py-2 rounded-lg font-bold hover:bg-opacity-90">
-          Buat Janji
-        </button>
-      </div>
-    </div>
+    <!-- Desktop Navigation -->
+    <ul class="nav-links" id="desktopNav">
+      <li><a href="../index.html#layanan">Layanan</a></li>
+      <li><a href="../index.html#profil-notaris">Tentang</a></li>
+      <li><a href="../pages/galeri.html">Galeri</a></li>
+      <li><a href="../index.html#artikel">Artikel</a></li>
+      <li><a href="../index.html#contact" class="btn-nav-cta">Buat Janji</a></li>
+    </ul>
+
+    <!-- Mobile Toggle -->
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="hamburgerIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html#layanan">Layanan</a>
+    <a href="../index.html#profil-notaris">Tentang</a>
+    <a href="../pages/galeri.html">Galeri</a>
+    <a href="../index.html#artikel">Artikel</a>
+    <a href="../index.html#contact" class="btn-mobile-cta">Buat Janji</a>
   </div>
 </nav>

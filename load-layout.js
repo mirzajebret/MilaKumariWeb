@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadComponent(`${basePath}components/footer.html`, 'footer-placeholder');
   await loadComponent(`${basePath}components/whatsapp-button.html`, 'whatsapp-placeholder');
 
+  // Initialize navbar and mobile menu after header is loaded
+  if (typeof setupNavbar === 'function') setupNavbar();
+  if (typeof setupMobileMenu === 'function') setupMobileMenu();
+
   if (typeof initializeEventListeners === 'function') initializeEventListeners();
   if (typeof initializePageSpecificFeatures === 'function') initializePageSpecificFeatures();
 

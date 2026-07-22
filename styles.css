@@ -116,6 +116,18 @@ ul {
   color: white;
 }
 
+/* ARTICLE PAGE OVERRIDES */
+body.article-page {
+  background: var(--cream) !important;
+  color: var(--text-dark) !important;
+}
+
+body.article-page main {
+  padding-top: calc(var(--navbar-h) + 2rem);
+  padding-bottom: 4rem;
+  min-height: 60vh;
+}
+
 /* NAVIGATION */
 .navbar {
   position: fixed;

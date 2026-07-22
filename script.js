@@ -36,6 +36,13 @@ function setupNavbar() {
   const nav = document.getElementById('mainNav');
   if (!nav) return;
 
+  // If no main content area (article pages), always show solid navbar
+  const isArticlePage = !document.getElementById('mainContent');
+  if (isArticlePage) {
+    nav.className = 'navbar navbar-default';
+    return;
+  }
+
   // Hero pages show transparent nav at top
   const heroPages = ['home'];
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id-ID">
 <head>
   <meta charset="UTF-8">
@@ -21,46 +21,27 @@
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/mk-6835754b4efb4.webp">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+
+  <!-- Custom Styles (matches main site design) -->
+  <link rel="stylesheet" href="../styles.css">
+
   <!-- Tailwind Configuration -->
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            rose: {
-              50: "#fff1f2",
-              100: "#ffe4e6",
-              200: "#fecdd3",
-              300: "#fda4af",
-              400: "#fb7185",
-              500: "#f43f5e",
-              600: "#e11d48",
-              700: "#be123c",
-              800: "#9f1239",
-              900: "#881337",
-              950: "#4c0519",
-            },
-            krem: {
-              100: "#e3c3a3",
-              50: "#f0e5da"
-            },
-            navy: {
-              100: "#2A3A54",
-              50: "#6b7380"
-            }
+            'brand-gold': '#C9A84C',
+            'brand-navy': '#0F1F3D',
+            'brand-bg': '#FDFAF4',
+            'brand-text': '#0F1F3D',
+            'brand-gray': '#4A5568',
+            krem: { 100: '#e3c3a3', 50: '#f0e5da' },
+            navy: { 100: '#2A3A54', 50: '#6b7380' }
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'],
+            serif: ['Playfair Display', 'Cormorant Garamond', 'serif'],
           }
         }
       }
@@ -96,7 +77,7 @@
   </script>
 </head>
 
-<body class="min-h-screen bg-gradient-to-br from-white to-rose-50">
+<body class="article-page" style="background: #FDFAF4; color: #0F1F3D;">
   <!-- Navigation -->
    <div id="header-placeholder"></div>
 
