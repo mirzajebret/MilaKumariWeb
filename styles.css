@@ -3104,7 +3104,6 @@ body.article-page main {
 .lf-contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
-  gap: 3rem;
   align-items: start;
 }
 
@@ -3502,4 +3501,90 @@ body.article-page main {
 .lf-articles>.container {
   position: relative;
   z-index: 2;
+}
+
+/* ==================== MEMBERSHIP / ASOSIASI SECTION ==================== */
+.lf-membership {
+  background: var(--cream-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 2rem 0;
+}
+
+.lf-membership-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.lf-membership-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.lf-membership-logos {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lf-membership-logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition);
+}
+
+.lf-membership-logo-item:hover {
+  transform: translateY(-3px);
+}
+
+.lf-membership-logo-item img {
+  height: 56px;
+  width: auto;
+  max-width: 100px;
+  object-fit: contain;
+  filter: grayscale(20%);
+  opacity: 0.88;
+  transition: var(--transition);
+  border-radius: 100%;
+}
+
+.lf-membership-logo-item:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.lf-membership-logo-item>span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  .lf-membership-inner {
+    gap: 1.5rem;
+  }
+
+  .lf-membership-logos {
+    gap: 1.5rem;
+  }
+
+  .lf-membership-logo-item img {
+    height: 44px;
+  }
 }
