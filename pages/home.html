@@ -1,4 +1,4 @@
-﻿<!-- ============================================================
+<!-- ============================================================
      HALAMAN HOME — CONTENT FRAGMENT
      Dimuat oleh script.js ke dalam #mainContent
      Header & Footer dimuat terpisah oleh load-layout.js
@@ -329,8 +329,12 @@
     <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0.5rem; flex:1;">
 
       <!-- Pembuatan Akta Notaris -->
-      <div style="display:flex; flex-direction:column; gap:0.5rem; padding:1rem 0.75rem;
-        align-items:center; justify-content:center; border-left:1px solid var(--gold);">
+      <a href="#notaris" onclick="loadPage('notaris'); return false;"
+        style="display:flex; flex-direction:column; gap:0.5rem; padding:1rem 0.75rem;
+          align-items:center; justify-content:center; border-left:1px solid var(--gold);
+          text-decoration:none; cursor:pointer; transition:background 0.2s ease;"
+        onmouseover="this.style.background='rgba(201,168,76,0.12)'"
+        onmouseout="this.style.background='transparent'">
         <span style="width:3rem; height:3rem; display:flex; align-items:center; justify-content:center;">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
             style="width:2.25rem; height:2.25rem;">
@@ -341,11 +345,16 @@
         </span>
         <p style="text-align:center; color:var(--white); font-size:0.9rem; line-height:1.3;">
           Pembuatan Akta Notaris</p>
-      </div>
+        <span style="font-size:0.75rem; color:var(--gold); letter-spacing:0.05em; margin-top:0.1rem;">Lihat Detail →</span>
+      </a>
 
       <!-- Peralihan & Pengurusan Hak Tanah -->
-      <div style="display:flex; flex-direction:column; gap:0.5rem; padding:1rem 0.75rem;
-        align-items:center; justify-content:center; border-left:1px solid var(--gold);">
+      <a href="#ppat" onclick="loadPage('ppat'); return false;"
+        style="display:flex; flex-direction:column; gap:0.5rem; padding:1rem 0.75rem;
+          align-items:center; justify-content:center; border-left:1px solid var(--gold);
+          text-decoration:none; cursor:pointer; transition:background 0.2s ease;"
+        onmouseover="this.style.background='rgba(201,168,76,0.12)'"
+        onmouseout="this.style.background='transparent'">
         <span style="width:3rem; height:3rem; display:flex; align-items:center; justify-content:center;">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
             style="width:2.25rem; height:2.25rem;">
@@ -355,11 +364,16 @@
         </span>
         <p style="text-align:center; color:var(--white); font-size:0.9rem; line-height:1.3;">
           Peralihan &amp; Pengurusan Hak Tanah</p>
-      </div>
+        <span style="font-size:0.75rem; color:var(--gold); letter-spacing:0.05em; margin-top:0.1rem;">Lihat Detail →</span>
+      </a>
 
       <!-- Pendirian & Perubahan Badan Hukum -->
-      <div style="display:flex; flex-direction:column; gap:0.5rem; padding:1rem 0.75rem;
-        align-items:center; justify-content:center; border-left:1px solid var(--gold);">
+      <a href="#notaris" onclick="loadPage('notaris'); return false;"
+        style="display:flex; flex-direction:column; gap:0.5rem; padding:1rem 0.75rem;
+          align-items:center; justify-content:center; border-left:1px solid var(--gold);
+          text-decoration:none; cursor:pointer; transition:background 0.2s ease;"
+        onmouseover="this.style.background='rgba(201,168,76,0.12)'"
+        onmouseout="this.style.background='transparent'">
         <span style="width:3rem; height:3rem; display:flex; align-items:center; justify-content:center;">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
             style="width:2.25rem; height:2.25rem;">
@@ -369,11 +383,16 @@
         </span>
         <p style="text-align:center; color:var(--white); font-size:0.9rem; line-height:1.3;">
           Pendirian &amp; Perubahan Badan Hukum</p>
-      </div>
+        <span style="font-size:0.75rem; color:var(--gold); letter-spacing:0.05em; margin-top:0.1rem;">Lihat Detail →</span>
+      </a>
 
       <!-- Layanan Hukum Lainnya -->
-      <div style="display:flex; flex-direction:column; gap:0.5rem; padding:1rem 0.75rem;
-        align-items:center; justify-content:center; border-left:1px solid var(--gold);">
+      <a href="#lainnya" onclick="loadPage('lainnya'); return false;"
+        style="display:flex; flex-direction:column; gap:0.5rem; padding:1rem 0.75rem;
+          align-items:center; justify-content:center; border-left:1px solid var(--gold);
+          text-decoration:none; cursor:pointer; transition:background 0.2s ease;"
+        onmouseover="this.style.background='rgba(201,168,76,0.12)'"
+        onmouseout="this.style.background='transparent'">
         <span style="width:3rem; height:3rem; display:flex; align-items:center; justify-content:center;">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
             style="width:2.25rem; height:2.25rem;">
@@ -382,7 +401,8 @@
         </span>
         <p style="text-align:center; color:var(--white); font-size:0.9rem; line-height:1.3;">
           Layanan Hukum Lainnya</p>
-      </div>
+        <span style="font-size:0.75rem; color:var(--gold); letter-spacing:0.05em; margin-top:0.1rem;">Lihat Detail →</span>
+      </a>
     </div>
   </div>
 </section>
