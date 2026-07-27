@@ -580,85 +580,83 @@
       object-position: bottom center !important;
     }
 
-    /* Feature strip: single column scrollable on small phones */
+    /* Feature strip: single column */
     .home-feature-strip {
       grid-template-columns: 1fr !important;
     }
 
-    /* Each item: grid with [icon | title] on row 1, [description] spanning full width on row 2 */
+    /* Each item: block container centered, icon+title inline on same row */
     .home-feature-strip>div {
-      display: grid !important;
-      grid-template-columns: auto 1fr !important;
-      grid-template-areas:
-        "icon title"
-        "desc desc" !important;
-      column-gap: 0.75rem !important;
-      row-gap: 0.3rem !important;
+      display: block !important;
+      text-align: center !important;
       padding: 1rem 1.25rem !important;
       border-right: none !important;
       border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
-      text-align: left !important;
-      align-items: center !important;
     }
 
     .home-feature-strip>div:last-child {
       border-bottom: none !important;
     }
 
+    /* Icon + title on the same centered line */
     .home-feature-strip>div svg {
-      grid-area: icon;
-      width: 40px !important;
-      height: 40px !important;
+      display: inline-block !important;
+      width: 36px !important;
+      height: 36px !important;
+      vertical-align: middle !important;
       margin-bottom: 0 !important;
-      align-self: center;
+      margin-right: 0.4rem !important;
     }
 
     .home-feature-strip>div h3 {
-      grid-area: title;
+      display: inline !important;
       font-size: 1.05rem !important;
+      vertical-align: middle !important;
       margin-bottom: 0 !important;
-      align-self: center;
     }
 
+    /* Description: full-width, left-aligned below */
     .home-feature-strip>div p {
-      grid-area: desc;
+      display: block !important;
+      text-align: left !important;
       max-width: none !important;
       font-size: 0.82rem !important;
       color: rgba(255, 255, 255, 0.8) !important;
       line-height: 1.45 !important;
-    }
+      margin-top: 0.4rem !important;
 
-    /* Feature wrap: reduce padding */
-    .home-feature-wrap {
-      padding: 1.5rem 1rem 0 !important;
-    }
+      /* Feature wrap: reduce padding */
+      .home-feature-wrap {
+        padding: 1.5rem 1rem 0 !important;
+      }
 
-    /* Layanan: single column list on mobile */
-    .home-layanan-wrapper {
-      padding: 1.25rem 1rem !important;
-    }
+      /* Layanan: single column list on mobile */
+      .home-layanan-wrapper {
+        padding: 1.25rem 1rem !important;
+      }
 
-    .home-layanan-grid {
-      grid-template-columns: 1fr !important;
-    }
+      .home-layanan-grid {
+        grid-template-columns: 1fr !important;
+      }
 
-    .home-layanan-grid>a {
-      border-top: 1px solid rgba(201, 168, 76, 0.3) !important;
-      border-left: none !important;
-      padding: 0.9rem 0.5rem !important;
-    }
+      .home-layanan-grid>a {
+        border-top: 1px solid rgba(201, 168, 76, 0.3) !important;
+        border-left: none !important;
+        padding: 0.9rem 0.5rem !important;
+      }
 
-    .home-layanan-grid>a:first-child {
-      border-top: none !important;
-    }
+      .home-layanan-grid>a:first-child {
+        border-top: none !important;
+      }
 
-    .home-layanan-title {
-      font-size: 1.5rem !important;
-    }
+      .home-layanan-title {
+        font-size: 1.5rem !important;
+      }
 
-    /* Info cards reduced padding */
-    div[style*="grid-template-columns:repeat(3,1fr)"] {
-      padding: 0 !important;
+      /* Info cards reduced padding */
+      div[style*="grid-template-columns:repeat(3,1fr)"] {
+        padding: 0 !important;
+      }
     }
   }
 </style>
