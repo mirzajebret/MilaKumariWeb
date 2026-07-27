@@ -1,574 +1,421 @@
-<!-- ============================================================
-     HOME PAGE — Kantor Notaris & PPAT Mila Kumari
-     Redesign v3.0 — Lawfic-Inspired Professional Law
+﻿<!-- ============================================================
+     HALAMAN HOME — CONTENT FRAGMENT
+     Dimuat oleh script.js ke dalam #mainContent
+     Header & Footer dimuat terpisah oleh load-layout.js
 ============================================================ -->
 
-<!-- ==================== HERO SECTION ==================== -->
-<section class="lf-hero" id="hero">
-  <!-- Mobile-only hero image -->
-  <img src="asset/hero-milakumari-m.webp" alt="Kantor Notaris & PPAT Mila Kumari, S.H., M.Kn."
-    class="lf-hero-mobile-img" loading="eager">
-  <div class="lf-hero-inner">
-    <!-- Left: Content -->
-    <div class="lf-hero-content reveal">
-      <div class="lf-hero-label">
-        <span class="lf-label-line"></span>
-        Notaris &amp; PPAT Bandung Barat
-        <span class="lf-label-line"></span>
-      </div>
-      <h1 class="lf-hero-title">
-        Kantor Notaris, NPAK &amp; PPAT
-        <br>
-        <em>Mila Kumari, S.H., M.Kn.</em>
+<!-- HERO -->
+<section id="beranda" style="position:relative; overflow:hidden; background:var(--navy);">
+  <!-- Background image + overlay -->
+  <div style="position:absolute; inset:0; z-index:0; pointer-events:none;">
+    <img src="../asset/office-bg-hero.webp" alt="" aria-hidden="true"
+      style="width:100%; height:100%; object-fit:cover; object-position:center;">
+    <div style="position:absolute; inset:0;
+      background: linear-gradient(to right,
+        rgba(20,42,87,1) 0%,
+        rgba(20,42,87,0.92) 30%,
+        rgba(20,42,87,0.65) 60%,
+        rgba(20,42,87,0.3) 80%,
+        rgba(20,42,87,0.1) 100%);"></div>
+  </div>
+
+  <div style="position:relative; z-index:10; max-width:1800px; margin:0 auto;
+    padding: 12rem 2.5rem 3.5rem; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:end;">
+    <!-- Left column -->
+    <div>
+      <p style="color:var(--gold); font-size:0.9rem; font-weight:600; letter-spacing:0.06em;
+        display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
+        <span>Profesional</span>
+        <span style="width:5px; height:5px; border-radius:50%; background:var(--gold); display:inline-block;"></span>
+        <span>Terpercaya</span>
+        <span style="width:5px; height:5px; border-radius:50%; background:var(--gold); display:inline-block;"></span>
+        <span>Berintegritas</span>
+      </p>
+
+      <h1 style="margin-top:1.25rem; font-family:'Playfair Display',serif; color:var(--white);
+        font-size:clamp(2.2rem, 3.5vw, 3.4rem); line-height:1.1;">
+        Notaris, NPAK &amp; PPAT<br>
+        <span style="font-style:italic;">Mila Kumari, S.H., M.Kn.</span>
       </h1>
-      <p class="lf-hero-desc">
-        Mila Kumari, S.H., M.Kn. adalah Notaris dan PPAT dengan pengalaman lebih dari 15 (lima belas) tahun, yang telah
-        melayani lebih dari 8.000 (delapan ribu) klien di wilayah Bandung Barat dan sekitarnya.
-        <br><br>
-        Layanan mencakup pembuatan akta notaris, pengurusan dan peralihan hak atas tanah, serta pendirian dan perubahan
-        badan hukum bagi berbagai segmen, mulai dari UMKM hingga perusahaan besar.
-        <br><br>
-        Didukung kepercayaan dari berbagai perbankan nasional dan lembaga pembiayaan (multifinance), setiap layanan
-        dijalankan dengan menjunjung tinggi profesionalisme, integritas, dan kepatuhan terhadap peraturan
+
+      <div style="width:64px; height:3px; background:var(--gold); margin:1.5rem 0;"></div>
+
+      <h2 style="color:var(--white); font-size:clamp(1.1rem, 1.8vw, 1.5rem); font-weight:700; line-height:1.4;">
+        Solusi Tepat untuk Kebutuhan Hukum Anda
+      </h2>
+
+      <p
+        style="margin-top:1.25rem; color:rgba(255,255,255,0.65); font-size:0.95rem; line-height:1.75; max-width:560px;">
+        Dengan pengalaman lebih dari 15 tahun, kami memberikan layanan kenotariatan dan pertanahan
+        dengan standar profesionalisme tinggi, integritas, serta kepatuhan penuh terhadap peraturan
         perundang-undangan.
       </p>
-      <!-- <div class="lf-hero-actions">
-        <button onclick="scrollToSection('contact')" class="lf-btn-outline">
-          Jadwalkan Konsultasi
-        </button>
-         <button onclick="scrollToSection('layanan')" class="lf-btn-primary">
-          Lihat Layanan
-        </button> 
-      </div> -->
 
-      <!-- Stats Row -->
-      <!-- <div class="lf-hero-stats">
-        <div class="lf-stat-item">
-          <span class="lf-stat-num">15+</span>
-          <span class="lf-stat-lbl">Tahun Pengalaman</span>
-        </div>
-        <div class="lf-stat-divider"></div>
-        <div class="lf-stat-item">
-          <span class="lf-stat-num">8.000+</span>
-          <span class="lf-stat-lbl">Klien Dilayani</span>
-        </div>
-        <div class="lf-stat-divider"></div>
-        <div class="lf-stat-item">
-          <span class="lf-stat-num">100%</span>
-          <span class="lf-stat-lbl">Kepuasan Klien</span>
-        </div>
-      </div> -->
+      <div style="margin-top:2rem; display:flex; flex-wrap:wrap; gap:1rem;">
+        <a href="#contact" onclick="scrollToSection('contact'); return false;" style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--gold);
+            color:var(--navy); font-weight:600; padding:0.85rem 1.5rem; border-radius:var(--radius-sm);
+            text-decoration:none; transition:var(--transition-fast);"
+          onmouseover="this.style.background='var(--gold-light)'" onmouseout="this.style.background='var(--gold)'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            style="width:1rem; height:1rem;">
+            <path
+              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Konsultasi Sekarang
+        </a>
+        <a href="#contact" onclick="scrollToSection('contact'); return false;" style="display:inline-flex; align-items:center; gap:0.5rem; border:1.5px solid var(--gold);
+            color:var(--white); font-weight:600; padding:0.85rem 1.5rem; border-radius:var(--radius-sm);
+            text-decoration:none; transition:var(--transition-fast);"
+          onmouseover="this.style.background='rgba(255,255,255,0.05)'" onmouseout="this.style.background='transparent'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            style="width:1rem; height:1rem; color:var(--gold);">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Hubungi Kami
+        </a>
+      </div>
     </div>
 
-    <!-- Right: Photo -->
-    <div class="lf-hero-photo reveal reveal-delay-2">
-      <div class="lf-hero-photo-wrap">
-        <img src="asset/ibu-mila-half.png" alt="Notaris & PPAT Mila Kumari, S.H., M.Kn." loading="eager">
+    <!-- Right spacer (foto ibu diposisikan absolut) -->
+    <div aria-hidden="true"></div>
+  </div>
 
+  <!-- Foto Ibu — absolut bottom-right -->
+  <div style="position:absolute; bottom:-30px; right:3rem; z-index:8; pointer-events:none;
+    width:48%; max-width:430px; min-width:280px; display:block;" class="hero-foto-ibu">
+    <img src="../asset/ibu-nobg.webp" alt="Notaris Mila Kumari, S.H., M.Kn." style="width:100%; height:auto; object-fit:contain; object-position:bottom;
+        filter:drop-shadow(0 8px 32px rgba(0,0,0,0.5)); display:block;">
+  </div>
+</section>
+
+<!-- FEATURE STRIP -->
+<div style="position:relative; z-index:10; padding:2.5rem 2rem 0;">
+  <div style="max-width:1400px; margin:0 auto; background:#001B39; border-radius:1rem;
+    display:grid; grid-template-columns:repeat(4,1fr);
+    box-shadow:0 10px 40px rgba(0,0,0,0.3);">
+
+    <!-- Berpengalaman -->
+    <div style="display:flex; flex-direction:column; align-items:center; text-align:center;
+      padding:1.5rem; border-right:1px solid rgba(255,255,255,0.15);">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
+        style="width:60px; height:60px; margin-bottom:0.25rem;">
+        <path
+          d="M8 12 3 7l3-3 5 3M16 12l5-5-3-3-5 3M8 12l2.5 2.5a1.5 1.5 0 0 0 2.12 0v0a1.5 1.5 0 0 0 0-2.12L11 10M16 12l-2.5 2.5a1.5 1.5 0 0 1-2.12 0"
+          stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 7l4.5 4.5M18 7l-4.5 4.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <h3 style="color:var(--gold); font-family:'Playfair Display',serif; font-weight:700;
+        font-size:1.3rem; margin-bottom:0.25rem;">Berpengalaman</h3>
+      <p style="color:rgba(255,255,255,0.9); font-size:0.9rem; line-height:1.4; max-width:200px;">
+        Lebih dari 15 tahun melayani ribuan klien</p>
+    </div>
+
+    <!-- Terpercaya -->
+    <div style="display:flex; flex-direction:column; align-items:center; text-align:center;
+      padding:1.5rem; border-right:1px solid rgba(255,255,255,0.15);">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
+        style="width:60px; height:60px; margin-bottom:0.25rem;">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <h3 style="color:var(--gold); font-family:'Playfair Display',serif; font-weight:700;
+        font-size:1.3rem; margin-bottom:0.25rem;">Terpercaya</h3>
+      <p style="color:rgba(255,255,255,0.9); font-size:0.9rem; line-height:1.4; max-width:200px;">
+        Dipercaya oleh individu, UMKM hingga perusahaan besar</p>
+    </div>
+
+    <!-- Profesional -->
+    <div
+      style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:1.5rem; border-right:1px solid rgba(255,255,255,0.15);">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
+        style="width:60px; height:60px; margin-bottom:0.25rem;">
+        <path d="M12 3v18M8 21h8M5 7h14M5 7l-3 6a3 3 0 0 0 6 0l-3-6zM19 7l-3 6a3 3 0 0 0 6 0l-3-6z"
+          stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <h3 style="color:var(--gold); font-family:'Playfair Display',serif; font-weight:700;
+        font-size:1.3rem; margin-bottom:0.25rem;">Profesional</h3>
+      <p style="color:rgba(255,255,255,0.9); font-size:0.9rem; line-height:1.4; max-width:200px;">
+        Standar layanan tinggi dan tepat waktu</p>
+    </div>
+
+    <!-- Berintegritas -->
+    <div style="display:flex; flex-direction:column; align-items:center; text-align:center;
+      padding:1.5rem;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
+        style="width:60px; height:60px; margin-bottom:0.25rem;">
+        <path d="M3 10h18M4 10v9m4-9v9m4-9v9m4-9v9m4-9v9M2 21h20M12 2l9 5H3l9-5z" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      <h3 style="color:var(--gold); font-family:'Playfair Display',serif; font-weight:700;
+        font-size:1.3rem; margin-bottom:0.25rem;">Berintegritas</h3>
+      <p style="color:rgba(255,255,255,0.9); font-size:0.9rem; line-height:1.4; max-width:200px;">
+        Jujur, amanah dan bertanggung jawab</p>
+    </div>
+  </div>
+</div>
+
+<!-- TENTANG — Hero Part -->
+<section id="profil-notaris" style="position:relative; overflow:hidden; margin-top:2.5rem; background:var(--cream);">
+  <!-- Side image right -->
+  <div style="position:absolute; right:0; top:0; height:100%; max-width:700px; z-index:0; pointer-events:none;">
+    <img src="../asset/side-about.webp" alt="" aria-hidden="true"
+      style="width:100%; height:100%; object-fit:cover; object-position:center;">
+    <div style="position:absolute; inset:0;
+      background:linear-gradient(to right, var(--cream) 0%, rgba(253,250,244,0) 40%, rgba(253,250,244,0) 100%);"></div>
+  </div>
+
+  <div style="position:relative; z-index:10; max-width:1800px; margin:0 auto;
+    padding:3rem 2.5rem 3.5rem; display:grid; grid-template-columns:1fr 1fr; align-items:end;">
+    <div>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem, 2.2vw, 2.2rem);
+        color:var(--text-dark); line-height:1.25;">
+        Tentang <span style="color:var(--gold);">Mila Kumari, S.H., M.Kn.</span>
+      </h2>
+
+      <p style="margin-top:1.5rem; font-size:0.95rem; line-height:1.75; color:rgba(15,31,61,0.8);">
+        <strong>Mila Kumari, S.H., M.Kn.</strong> adalah Notaris dan PPAT dengan pengalaman lebih dari
+        15 tahun, yang telah melayani lebih dari 8.000 klien di wilayah Bandung Barat dan sekitarnya.
+      </p>
+
+      <p style="margin-top:1rem; font-size:0.95rem; line-height:1.75; color:rgba(15,31,61,0.8);">
+        Layanan mencakup pembuatan akta notaris, pengurusan dan peralihan hak atas tanah, serta
+        pendirian dan perubahan badan hukum bagi berbagai segmen, mulai dari UMKM hingga perusahaan besar.
+      </p>
+
+      <div style="margin-top:2rem; display:flex; align-items:center; gap:1rem; color:var(--text-dark);">
+        <span style="height:1px; width:40px; background:var(--gold); display:block;"></span>
+        <span style="font-family:'Playfair Display',serif; font-style:italic; font-size:1.1rem;">
+          &quot;Trusted, Accountable &amp; Professional&quot;
+        </span>
+        <span style="height:1px; width:40px; background:var(--gold); display:block;"></span>
+      </div>
+    </div>
+
+    <div aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- TENTANG — Info Cards -->
+<section style="background:var(--cream); padding-bottom:3rem;">
+  <div style="max-width:1800px; margin:0 auto; padding:0 2.5rem;">
+    <div style="margin-top:3rem; display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;">
+
+      <!-- Pendidikan -->
+      <div style="background:var(--white); border-radius:var(--radius-sm); overflow:hidden;
+        box-shadow:var(--shadow-sm); border:1px solid var(--gold);">
+        <div style="background:var(--navy); display:flex; align-items:center; gap:0.75rem;
+          padding:1rem 1.25rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
+            style="width:2.5rem; height:2.5rem; flex-shrink:0;">
+            <path d="M2 9l10-5 10 5-10 5-10-5z" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5M22 9v6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span style="color:var(--white); font-weight:700; font-size:0.85rem; letter-spacing:0.08em;">PENDIDIKAN</span>
+        </div>
+        <div style="padding:1.25rem; display:flex; flex-direction:column; gap:1.25rem;">
+          <div style="display:flex; gap:0.75rem;">
+            <span style="flex-shrink:0; width:1.5rem; height:1.5rem; border-radius:50%; background:var(--navy);
+              color:var(--white); font-size:0.7rem; font-weight:700; display:flex; align-items:center;
+              justify-content:center; margin-top:2px;">1</span>
+            <div>
+              <p style="font-weight:700; color:var(--text-dark); font-size:0.9rem;">Sarjana Hukum (S.H)</p>
+              <p style="color:rgba(15,31,61,0.6); font-size:0.82rem; margin-top:2px; line-height:1.4;">
+                Fakultas Hukum Universitas Hasanuddin, Makasar</p>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.75rem;">
+            <span style="flex-shrink:0; width:1.5rem; height:1.5rem; border-radius:50%; background:var(--navy);
+              color:var(--white); font-size:0.7rem; font-weight:700; display:flex; align-items:center;
+              justify-content:center; margin-top:2px;">2</span>
+            <div>
+              <p style="font-weight:700; color:var(--text-dark); font-size:0.9rem;">Magister Kenotariatan (M.Kn)</p>
+              <p style="color:rgba(15,31,61,0.6); font-size:0.82rem; margin-top:2px; line-height:1.4;">
+                Pascasarjana Universitas Padjajaran, Bandung</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sertifikasi -->
+      <div style="background:var(--white); border-radius:var(--radius-sm); overflow:hidden;
+        box-shadow:var(--shadow-sm); border:1px solid var(--gold);">
+        <div style="background:var(--navy); display:flex; align-items:center; gap:0.75rem;
+          padding:1rem 1.25rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
+            style="width:2.5rem; height:2.5rem; flex-shrink:0;">
+            <circle cx="12" cy="8" r="6" />
+            <path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span style="color:var(--white); font-weight:700; font-size:0.85rem; letter-spacing:0.08em;">SERTIFIKASI
+            KHUSUS</span>
+        </div>
+        <div style="padding:1.25rem; display:flex; flex-direction:column; gap:1.25rem;">
+          <div style="display:flex; gap:0.75rem; align-items:center;">
+            <span style="flex-shrink:0; width:1.5rem; height:1.5rem; border-radius:50%; background:var(--navy);
+              color:var(--white); font-size:0.7rem; font-weight:700; display:flex; align-items:center;
+              justify-content:center;">1</span>
+            <p style="font-weight:700; color:var(--text-dark); font-size:0.9rem;">Notaris Syariah</p>
+          </div>
+          <div style="display:flex; gap:0.75rem; align-items:center;">
+            <span style="flex-shrink:0; width:1.5rem; height:1.5rem; border-radius:50%; background:var(--navy);
+              color:var(--white); font-size:0.7rem; font-weight:700; display:flex; align-items:center;
+              justify-content:center;">2</span>
+            <p style="font-weight:700; color:var(--text-dark); font-size:0.9rem;">Notaris Koperasi</p>
+          </div>
+          <div style="display:flex; gap:0.75rem; align-items:center;">
+            <span style="flex-shrink:0; width:1.5rem; height:1.5rem; border-radius:50%; background:var(--navy);
+              color:var(--white); font-size:0.7rem; font-weight:700; display:flex; align-items:center;
+              justify-content:center;">3</span>
+            <p style="font-weight:700; color:var(--text-dark); font-size:0.9rem;">Notaris Pasar Modal</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legalitas -->
+      <div style="background:var(--white); border-radius:var(--radius-sm); overflow:hidden;
+        box-shadow:var(--shadow-sm); border:1px solid var(--gold);">
+        <div style="background:var(--navy); display:flex; align-items:center; gap:0.75rem;
+          padding:1rem 1.25rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
+            style="width:2.5rem; height:2.5rem; flex-shrink:0;">
+            <path
+              d="M12 2l2.4 1.2 2.6-.4 1.3 2.3 2.3 1.3-.4 2.6L21.4 12l-1.2 2.4.4 2.6-2.3 1.3-1.3 2.3-2.6-.4L12 21.4l-2.4-1.2-2.6.4-1.3-2.3-2.3-1.3.4-2.6L2.6 12l1.2-2.4-.4-2.6 2.3-1.3 1.3-2.3 2.6.4L12 2z"
+              stroke-linejoin="round" />
+            <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span style="color:var(--white); font-weight:700; font-size:0.85rem; letter-spacing:0.08em;">LEGALITAS
+            JABATAN</span>
+        </div>
+        <div style="padding:1.25rem; display:flex; flex-direction:column; gap:1.25rem;">
+          <div style="display:flex; gap:0.75rem;">
+            <span style="flex-shrink:0; width:1.5rem; height:1.5rem; border-radius:50%; background:var(--navy);
+              color:var(--white); font-size:0.7rem; font-weight:700; display:flex; align-items:center;
+              justify-content:center; margin-top:2px;">1</span>
+            <div>
+              <p style="font-weight:700; color:var(--text-dark); font-size:0.9rem;">Notaris</p>
+              <p style="color:rgba(15,31,61,0.6); font-size:0.82rem; margin-top:2px; line-height:1.4;">
+                berdasarkan Surat Keputusan Menteri Hukum &amp; Hak Asasi Manusia Republik Indonesia</p>
+            </div>
+          </div>
+          <div style="display:flex; gap:0.75rem;">
+            <span style="flex-shrink:0; width:1.5rem; height:1.5rem; border-radius:50%; background:var(--navy);
+              color:var(--white); font-size:0.7rem; font-weight:700; display:flex; align-items:center;
+              justify-content:center; margin-top:2px;">2</span>
+            <div>
+              <p style="font-weight:700; color:var(--text-dark); font-size:0.9rem;">Pejabat Pembuat Akta Tanah (PPAT)
+              </p>
+              <p style="color:rgba(15,31,61,0.6); font-size:0.82rem; margin-top:2px; line-height:1.4;">
+                berdasarkan Surat Keputusan Menteri ATR/Kepala Badan Pertanahan Republik Indonesia</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== ABOUT / PROFILE SECTION ==================== -->
-<section id="profil-notaris" class="lf-about">
-  <div class="container">
-    <div class="lf-about-grid">
-      <!-- Left: Image collage -->
-      <div class="aspect-3/2  overflow-hidden"><img alt="Kelima Anggota LBH Gardhatara"
-          class="w-full h-full object-cover object-top" src="/asset/foto-tim-mila-kumari.png"></div>
+<!-- LAYANAN KAMI -->
+<section id="layanan" style="background:var(--navy); padding:1rem 0;">
+  <div style="max-width:1800px; margin:0 auto; padding:1rem 2.5rem;
+    display:flex; flex-direction:row; align-items:center; gap:2.5rem;">
+    <h2 style="font-family:'Playfair Display',serif; color:var(--gold);
+      font-size:clamp(1.6rem, 2.5vw, 2.2rem); line-height:1.2; flex-shrink:0;">
+      Layanan Kami
+    </h2>
 
-      <!-- Right: Content -->
-      <div class="lf-about-content reveal-right">
-        <div class="lf-section-label">
-          <span class="lf-label-bar"></span>
-          Tentang Kami
-        </div>
-        <h2 class="lf-section-title">Solusi Kenotariatan dan Pertanahan yang Profesional</h2>
-        <p class="lf-section-desc">
-          Mila Kumari, S.H., M.Kn. adalah Notaris dan PPAT yang memiliki pengalaman lebih dari 15 (lima belas) tahun
-          dalam memberikan layanan kenotariatan dan pertanahan secara profesional, akuntabel, dan berintegritas. Dalam
-          praktiknya, telah melayani lebih dari 8.000 (delapan ribu) klien yang tersebar di wilayah Bandung Barat dan
-          sekitarnya.
-          <br><br>
-          Ruang lingkup layanan meliputi pembuatan akta-akta notaris, pengurusan dan peralihan hak atas tanah, pendirian
-          dan perubahan badan hukum, termasuk perseroan terbatas dan koperasi, serta pendampingan aspek legal bagi
-          pelaku usaha dari berbagai skala, mulai dari usaha mikro, kecil, dan menengah (UMKM) hingga perusahaan besar.
-          <br><br>
-          Kepercayaan yang diberikan oleh berbagai institusi perbankan nasional dan lembaga pembiayaan (multifinance)
-          merupakan cerminan dari komitmen dalam menjaga kualitas layanan, kepastian hukum, serta kepatuhan terhadap
-          ketentuan peraturan perundang-undangan yang berlaku.
-        </p>
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0.5rem; flex:1;">
 
-        <!-- Feature highlights -->
-        <!-- <div class="lf-features">
-          <div class="lf-feature-item">
-            <div class="lf-feature-icon">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"
-                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
-            </div>
-            <div>
-              <h4 class="lf-feature-title">Konsultasi Awal Gratis</h4>
-              <p class="lf-feature-desc">Dapatkan konsultasi hukum awal tanpa biaya untuk memahami kebutuhan Anda.</p>
-            </div>
-          </div>
-          <div class="lf-feature-item">
-            <div class="lf-feature-icon">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-              </svg>
-            </div>
-            <div>
-              <h4 class="lf-feature-title">Pendekatan Inovatif</h4>
-              <p class="lf-feature-desc">Solusi hukum terkini yang adaptif sesuai dengan kebutuhan klien modern.</p>
-            </div>
-          </div>
-        </div> -->
+      <!-- Pembuatan Akta Notaris -->
+      <div style="display:flex; flex-direction:column; gap:0.5rem; padding:1rem 0.75rem;
+        align-items:center; justify-content:center; border-left:1px solid var(--gold);">
+        <span style="width:3rem; height:3rem; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
+            style="width:2.25rem; height:2.25rem;">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M14 2v6h6M8 13h8M8 17h8M8 9h2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <p style="text-align:center; color:var(--white); font-size:0.9rem; line-height:1.3;">
+          Pembuatan Akta Notaris</p>
+      </div>
 
-        <!-- Credentials -->
-        <!-- <div class="lf-credentials">
-          <div class="lf-credential-row">
-            <div class="lf-cred-icon">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M12 14l6.16-3.422A12.083 12.083 0 0122 12v6a2 2 0 01-2 2H4a2 2 0 01-2-2v-6c0-1.933.614-3.72 1.64-5.165" />
-              </svg>
-            </div>
-            <div>
-              <div class="lf-cred-title">Pendidikan</div>
-              <div class="lf-cred-body">S.H. — Universitas Hasanuddin · M.Kn. — Universitas Padjadjaran</div>
-            </div>
-          </div>
-          <div class="lf-credential-row">
-            <div class="lf-cred-icon">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-            </div>
-            <div>
-              <div class="lf-cred-title">Pengalaman Aktif</div>
-              <div class="lf-cred-body">Notaris &amp; PPAT aktif 2010–sekarang · Terdaftar resmi SK Menteri Hukum RI
-              </div>
-            </div>
-          </div>
-        </div> -->
+      <!-- Peralihan & Pengurusan Hak Tanah -->
+      <div style="display:flex; flex-direction:column; gap:0.5rem; padding:1rem 0.75rem;
+        align-items:center; justify-content:center; border-left:1px solid var(--gold);">
+        <span style="width:3rem; height:3rem; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
+            style="width:2.25rem; height:2.25rem;">
+            <path d="M3 11.5 12 4l9 7.5M5 10v10h14V10" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9 20v-6h6v6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <p style="text-align:center; color:var(--white); font-size:0.9rem; line-height:1.3;">
+          Peralihan &amp; Pengurusan Hak Tanah</p>
+      </div>
 
+      <!-- Pendirian & Perubahan Badan Hukum -->
+      <div style="display:flex; flex-direction:column; gap:0.5rem; padding:1rem 0.75rem;
+        align-items:center; justify-content:center; border-left:1px solid var(--gold);">
+        <span style="width:3rem; height:3rem; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
+            style="width:2.25rem; height:2.25rem;">
+            <path d="M4 21V6l8-4 8 4v15M4 21h16M9 9h1M9 13h1M14 9h1M14 13h1M10 21v-4h4v4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </span>
+        <p style="text-align:center; color:var(--white); font-size:0.9rem; line-height:1.3;">
+          Pendirian &amp; Perubahan Badan Hukum</p>
+      </div>
 
+      <!-- Layanan Hukum Lainnya -->
+      <div style="display:flex; flex-direction:column; gap:0.5rem; padding:1rem 0.75rem;
+        align-items:center; justify-content:center; border-left:1px solid var(--gold);">
+        <span style="width:3rem; height:3rem; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.6"
+            style="width:2.25rem; height:2.25rem;">
+            <path d="M3 4h18M4 4v10h16V4M12 14v6M9 20h6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <p style="text-align:center; color:var(--white); font-size:0.9rem; line-height:1.3;">
+          Layanan Hukum Lainnya</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== PRACTICE AREAS / LAYANAN SECTION ==================== -->
-<section id="layanan" class="lf-practice">
-  <div class="container">
-    <div class="lf-section-header text-center reveal">
-      <div class="lf-section-label light">
-        <span class="lf-label-bar light"></span>
-        Area Layanan
-      </div>
-      <h2 class="lf-section-title light">Area Praktik Hukum Kami</h2>
-      <div class="lf-title-divider"></div>
-    </div>
+<style>
+  /* Hide foto ibu on smaller screens */
+  @media (max-width: 1024px) {
+    .hero-foto-ibu {
+      display: none !important;
+    }
 
-    <div class="lf-practice-grid">
-      <!-- Card 8 -->
-      <div class="lf-practice-card reveal reveal-delay-4" onclick="loadPage('notaris')" role="button" tabindex="0">
-        <div class="lf-practice-icon">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-          </svg>
-        </div>
-        <div class="lf-practice-category">LAYANAN JASA</div>
-        <h3 class="lf-practice-name">KENOTARIATAN</h3>
-      </div>
+    #beranda>div[style*="grid-template-columns"] {
+      grid-template-columns: 1fr !important;
+    }
 
-      <!-- Card 5 -->
-      <div class="lf-practice-card reveal reveal-delay-1" onclick="loadPage('ppat')" role="button" tabindex="0">
-        <div class="lf-practice-icon">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-          </svg>
-        </div>
-        <div class="lf-practice-category">LAYANAN JASA</div>
-        <h3 class="lf-practice-name">PERTANAHAN</h3>
-      </div>
+    #profil-notaris>div[style*="grid-template-columns"],
+    section[id="profil-notaris"]+section+section>div>div,
+    .feature-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
 
-      <!-- Card Koperasi -->
-      <div class="lf-practice-card reveal reveal-delay-2" onclick="loadPage('koperasi')" role="button" tabindex="0">
-        <div class="lf-practice-icon">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-          </svg>
-        </div>
-        <div class="lf-practice-category">LAYANAN JASA</div>
-        <h3 class="lf-practice-name">KOPERASI</h3>
-      </div>
+  @media (max-width: 768px) {
+    #layanan>div>div[style*="grid-template-columns:repeat(4"] {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
 
-      <!-- Card Lainnya -->
-      <div class="lf-practice-card reveal reveal-delay-1" onclick="loadPage('lainnya')" role="button" tabindex="0">
-        <div class="lf-practice-icon">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-        </div>
-        <div class="lf-practice-category">LAYANAN JASA</div>
-        <h3 class="lf-practice-name">LAINNYA</h3>
-      </div>
+    div[style*="grid-template-columns:repeat(3,1fr)"] {
+      grid-template-columns: 1fr !important;
+    }
 
-    </div>
-  </div>
-</section>
-
-<!-- ==================== WHY US / PARTNER SECTION ==================== -->
-<!-- <section class="lf-partner">
-  <div class="container">
-    <div class="lf-section-header text-center reveal" style="margin-bottom: 1rem;">
-
-      <h2 class="lf-section-title">Mitra Terpercaya</h2>
-    </div>-->
-
-<!-- Why us cards -->
-<!-- <div class="lf-why-row reveal">
-      <div class="lf-why-item">
-        <div class="lf-why-icon">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-          </svg>
-        </div>
-        <h4 class="lf-why-title">Legalitas Terverifikasi</h4>
-        <p class="lf-why-desc">Terdaftar resmi berdasarkan SK Menteri Hukum dan HAM RI. Semua dokumen sah dan
-          berkedudukan hukum.</p>
-      </div>
-      <div class="lf-why-item">
-        <div class="lf-why-icon">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        </div>
-        <h4 class="lf-why-title">Proses Cepat &amp; Tepat</h4>
-        <p class="lf-why-desc">Pengurusan dokumen yang efisien dan tepat waktu. Kami menghargai waktu Anda di setiap
-          proses.</p>
-      </div>
-      <div class="lf-why-item">
-        <div class="lf-why-icon">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-        </div>
-        <h4 class="lf-why-title">Tim Profesional</h4>
-        <p class="lf-why-desc">Didukung staf berpengalaman yang siap melayani dengan ramah dan penuh dedikasi untuk
-          setiap klien.</p>
-      </div>
-      <div class="lf-why-item">
-        <div class="lf-why-icon">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        </div>
-        <h4 class="lf-why-title">Integritas</h4>
-        <p class="lf-why-desc">Kami bekerja berdasarkan prinsip profesionalisme, memberikan rasa aman dan
-          kepastian hukum bagi klien.</p>
-      </div>
-    </div> -->
-
-<!-- Photo gallery grid -->
-<!-- <div class="lf-gallery-grid reveal">
-      <div class="lf-gallery-item lf-gallery-large">
-        <img src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/foto-tim-mila-kumari.png" alt="Tim Kantor Notaris Mila Kumari" loading="lazy">
-      </div>
-      <div class="lf-gallery-item">
-        <img src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/ibu_mila_desk2.jpg" alt="Mila Kumari di Kantor" loading="lazy">
-      </div>
-      <div class="lf-gallery-item">
-        <img src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/ibu_Mila_Kumari.webp" alt="Notaris Mila Kumari" loading="lazy">
-      </div>
-      <div class="lf-gallery-item">
-        <img src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/mila-kumari-sit.webp" alt="Mila Kumari" loading="lazy">
-      </div>
-      <div class="lf-gallery-item">
-        <img src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/law-document-desk.png" alt="Dokumen Hukum" loading="lazy">
-      </div>
-      <div class="lf-gallery-item">
-        <img src="https://raw.githubusercontent.com/mirzajebret/MilaKumariWeb/refs/heads/main/asset/anggota-4.jpg" alt="Staf Kantor" loading="lazy">
-      </div>
-    </div> -->
-
-<!-- <div class="text-center reveal" style="margin-top: 2.5rem;">
-      <button onclick="loadPage('galeri')" class="lf-btn-outline-dark">
-        Lihat Galeri Lengkap
-        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </button>
-    </div>
-  </div>
-</section> -->
-
-<!-- ==================== ARTICLES SECTION ==================== -->
-<!-- <section class="lf-articles">
-  <div class="container">
-    <div class="lf-section-header text-center reveal" style="margin-bottom: 3rem;">
-      <div class="lf-section-label light">
-        <span class="lf-label-bar light"></span>
-        Wawasan Hukum
-      </div>
-      <h2 class="lf-section-title light">Artikel Terbaru</h2>
-      <div class="lf-title-divider"></div>
-    </div>
-
-    <div class="lf-articles-grid">
-      <article class="lf-article-card reveal reveal-delay-1">
-        <img class="lf-article-img"
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop"
-          alt="Kepemilikan Properti" loading="lazy">
-        <div class="lf-article-body">
-          <span class="lf-article-badge badge-ppat">PPAT</span>
-          <h3 class="lf-article-title">Mengenal HGB dan Bedanya dengan SHM</h3>
-          <p class="lf-article-excerpt">Pahami perbedaan mendasar antara Sertifikat Hak Guna Bangunan (HGB) dan
-            Sertifikat Hak Milik (SHM)...</p>
-          <a href="/articles/mengenal-hgb-dan-bedanya-dengan-shm.html" class="lf-article-link">
-            Baca Selengkapnya
-            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <article class="lf-article-card reveal reveal-delay-2">
-        <img class="lf-article-img"
-          src="https://images.unsplash.com/photo-1457694587812-e8bf29a43845?w=600&auto=format&fit=crop&q=60"
-          alt="Dokumen Notaris" loading="lazy">
-        <div class="lf-article-body">
-          <span class="lf-article-badge badge-notaris">Notaris</span>
-          <h3 class="lf-article-title">Akta Otentik vs Akta di Bawah Tangan</h3>
-          <p class="lf-article-excerpt">Ketahui perbedaan mendasar antara akta otentik yang dibuat notaris dan akta di
-            bawah tangan...</p>
-          <a href="/articles/perbedaan-akta-otentik-dan-akta-di-bawah-tangan.html" class="lf-article-link">
-            Baca Selengkapnya
-            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <article class="lf-article-card reveal reveal-delay-3">
-        <img class="lf-article-img"
-          src="https://images.unsplash.com/photo-1621998951482-d096a4c7dee4?w=600&auto=format&fit=crop&q=60"
-          alt="Dokumen Keluarga" loading="lazy">
-        <div class="lf-article-body">
-          <span class="lf-article-badge badge-tips">Tips</span>
-          <h3 class="lf-article-title">5 Dokumen Penting Setiap Keluarga</h3>
-          <p class="lf-article-excerpt">Dokumen-dokumen legal penting yang sebaiknya dimiliki dan disimpan dengan baik
-            oleh setiap keluarga...</p>
-          <a href="/articles/5-dokumen-penting-yang-harus-dimiliki-setiap-keluarga.html" class="lf-article-link">
-            Baca Selengkapnya
-            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-      </article>
-    </div>
-
-    <div class="text-center reveal" style="margin-top: 3rem;">
-      <button onclick="loadPage('artikel')" class="lf-btn-outline">
-        Lihat Semua Artikel
-        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </button>
-    </div>
-  </div>
-</section> -->
-
-<!-- ==================== MEMBERSHIP SECTION ==================== -->
-<section class="lf-membership">
-  <div class="container">
-    <div class="lf-membership-inner reveal">
-      <span class="lf-membership-label">Anggota dari:</span>
-      <div class="lf-membership-logos">
-        <div class="lf-membership-logo-item">
-          <img src="asset/link-ini.jpg" alt="INI – Ikatan Notaris Indonesia" loading="lazy">
-          <!-- <span>Ikatan Notaris Indonesia</span> -->
-        </div>
-
-        <div class="lf-membership-logo-item">
-          <img src="asset/npak.jpg" alt="NPAK – Notaris Pemegang Akta Kewenangan" loading="lazy">
-          <!-- <span>Notaris Pembuat Akta Koperasi</span> -->
-        </div>
-        <div class="lf-membership-logo-item">
-          <img src="asset/link-ppat.jpg" alt="IPPAT – Ikatan Pejabat Pembuat Akta Tanah" loading="lazy">
-          <!-- <span>Ikatan Pejabat Pembuat Akta Tanah</span> -->
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== CONTACT SECTION ==================== -->
-<section id="contact" class="lf-contact">
-  <div class="container">
-    <div class="lf-section-header text-center reveal" style="margin-bottom: 3rem;">
-
-      <h2 class="lf-section-title">Hubungi Kami</h2>
-    </div>
-
-    <div class="lf-contact-grid">
-      <!-- Info -->
-      <div class="lf-contact-info reveal">
-        <h3 class="lf-contact-info-title">Informasi Kantor</h3>
-        <p class="lf-contact-info-sub">Kami siap melayani Anda pada jam operasional kantor</p>
-
-        <div class="lf-contact-items">
-          <div class="lf-contact-item">
-            <div class="lf-contact-icon">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </div>
-            <div>
-              <div class="lf-contact-lbl">Alamat</div>
-              <div class="lf-contact-val">Jl. Raya Nasional No.199, Cimareme,<br>Kec. Ngamprah, Kab. Bandung Barat 40552
-              </div>
-            </div>
-          </div>
-          <div class="lf-contact-item">
-            <div class="lf-contact-icon">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-            </div>
-            <div>
-              <div class="lf-contact-lbl">Telepon / WhatsApp</div>
-              <div class="lf-contact-val">+62 822 1725 9555<br>+62 817 215 980</div>
-            </div>
-          </div>
-          <div class="lf-contact-item">
-            <div class="lf-contact-icon">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.75">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-            </div>
-            <div>
-              <div class="lf-contact-lbl">Jam Operasional</div>
-              <div class="lf-contact-val">Senin–Jumat: 08.00–17.00 WIB<br>Sabtu: 09.00–12.00 WIB</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="lf-contact-socials">
-          <a href="https://www.facebook.com/notaris.ppat.mila.kumari/" target="_blank" rel="noopener" class="social-btn"
-            aria-label="Facebook">
-            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd"
-                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                clip-rule="evenodd" />
-            </svg>
-          </a>
-          <a href="https://www.instagram.com/notarisppatmilakumari/" target="_blank" rel="noopener" class="social-btn"
-            aria-label="Instagram">
-            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd"
-                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                clip-rule="evenodd" />
-            </svg>
-          </a>
-          <a href="https://wa.me/6282217259555" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
-            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Form -->
-      <div class="lf-contact-form reveal reveal-delay-2">
-        <h3 class="lf-contact-form-title">Kirim Pesan</h3>
-        <form id="contactForm"
-          action="https://script.google.com/macros/s/AKfycbz2yZg24hwpNS_6OSMLOI05s6r8c_QtOqJtaBU0WTl9jnTvhrsf8WJgSxvV_c6NLkVvDg/exec"
-          method="POST">
-          <div class="lf-form-row">
-            <div class="lf-form-group">
-              <label for="name" class="form-label">Nama Lengkap</label>
-              <input type="text" id="name" name="name" class="form-input" placeholder="Masukkan nama lengkap" required>
-            </div>
-            <div class="lf-form-group">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="Masukkan email Anda" required>
-            </div>
-          </div>
-          <div class="lf-form-row">
-            <div class="lf-form-group">
-              <label for="phone" class="form-label">Telepon</label>
-              <input type="tel" id="phone" name="phone" class="form-input" placeholder="Nomor telepon Anda" required>
-            </div>
-            <div class="lf-form-group">
-              <label for="service" class="form-label">Layanan</label>
-              <select id="service" name="service" class="form-select" required>
-                <option value="">Pilih layanan</option>
-                <option value="notaris">Layanan Notaris</option>
-                <option value="ppat">Layanan PPAT</option>
-                <option value="konsultasi">Konsultasi Hukum</option>
-                <option value="lainnya">Lainnya</option>
-              </select>
-            </div>
-          </div>
-          <div class="lf-form-group">
-            <label for="message" class="form-label">Pesan</label>
-            <textarea id="message" name="message" rows="4" class="form-textarea"
-              placeholder="Tuliskan pesan atau pertanyaan Anda" required></textarea>
-          </div>
-          <button type="submit" class="btn-submit">Kirim Pesan</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<script>
-  // Trigger reveal animations for dynamically loaded content
-  (function () {
-    const allReveal = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-    allReveal.forEach(el => {
-      if (!el.classList.contains('visible')) {
-        const obs = new IntersectionObserver((entries) => {
-          entries.forEach(e => {
-            if (e.isIntersecting) {
-              e.target.classList.add('visible');
-              obs.unobserve(e.target);
-            }
-          });
-        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-        obs.observe(el);
-      }
-    });
-    // Mark hero as visible immediately
-    document.querySelectorAll('.lf-hero .reveal, .lf-hero .reveal-delay-2').forEach(el => {
-      setTimeout(() => el.classList.add('visible'), 100);
-    });
-  })();
-</script>
+    div[style*="background:#001B39"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

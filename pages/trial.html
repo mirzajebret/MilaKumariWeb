@@ -1,0 +1,510 @@
+﻿<!DOCTYPE html>
+<html lang="id-ID">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1299">
+  <title>Notaris &amp; PPAT Mila Kumari, S.H., M.Kn.</title>
+  <meta name="description"
+    content="Kantor Notaris &amp; PPAT Mila Kumari, S.H., M.Kn. — Solusi tepat untuk kebutuhan hukum Anda. Profesional, terpercaya, dan berintegritas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { 900: '#0A1A33', 950: '#060F1F' },
+            gold: '#C9A84C',
+            'gold-light': '#DFC175',
+            cream: '#F7F1E6',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    .drop-shadow-ibu {
+      filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.5));
+    }
+  </style>
+</head>
+
+<body class="font-sans text-navy-900">
+
+  <!-- NAVBAR -->
+  <header class="bg-navy-900 sticky top-0 z-50">
+    <nav class="max-w-[1800px] mx-auto flex items-center justify-between gap-4 px-6 md:px-10 py-4">
+      <a href="#beranda" class="flex items-center gap-3 shrink-0">
+        <span class="w-14 h-14 rounded-full flex items-center justify-center">
+          <img src="../asset/mk-6835754b4efb4.webp" alt="Logo">
+        </span>
+        <span class="hidden sm:flex flex-col leading-tight">
+          <span class="text-[11px] tracking-[0.18em] text-gold font-semibold">KANTOR NOTARIS, NPAK &amp; PPAT</span>
+          <span class="text-white font-serif italic text-xl -mt-0.5">Mila Kumari, S.H., M.Kn.</span>
+          <span class="font-serif italic text-xs font-light text-white">"Trusted, Accountable &amp; Professional"</span>
+        </span>
+      </a>
+      <ul class="hidden lg:flex items-center gap-8 text-[15px] text-white/90 font-medium">
+        <li><a href="#beranda" class="text-gold border-b-2 border-gold pb-1">Beranda</a></li>
+        <li><a href="#tentang" class="hover:text-gold transition-colors pb-1">Tentang Kami</a></li>
+        <li><a href="#layanan" class="hover:text-gold transition-colors pb-1">Layanan</a></li>
+        <li><a href="#artikel" class="hover:text-gold transition-colors pb-1">Artikel</a></li>
+        <li><a href="#kontak" class="hover:text-gold transition-colors pb-1">Kontak</a></li>
+      </ul>
+      <a href="#kontak"
+        class="hidden md:inline-flex items-center gap-2 bg-gold hover:bg-gold-light transition-colors text-navy-900 font-semibold text-sm px-5 py-2.5 rounded-md shrink-0">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-4 h-4">
+          <path
+            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Konsultasi
+      </a>
+      <button id="mobileMenuBtn" aria-label="Buka menu" class="lg:hidden text-white p-2 -mr-2">
+        <svg id="iconHamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-8 h-8">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+        </svg>
+        <svg id="iconClose" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          class="w-8 h-8 hidden">
+          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </nav>
+    <div id="mobileMenu"
+      class="hidden absolute top-full left-0 w-full bg-navy-900 border-t border-white/10 shadow-xl pb-6 px-6 z-50">
+      <ul class="flex flex-col mt-2">
+        <li><a href="#beranda" onclick="closeMobileMenu()"
+            class="block text-white/90 text-lg py-4 border-b border-white/5 hover:text-gold transition-colors">Beranda</a>
+        </li>
+        <li><a href="#tentang" onclick="closeMobileMenu()"
+            class="block text-white/90 text-lg py-4 border-b border-white/5 hover:text-gold transition-colors">Tentang
+            Kami</a></li>
+        <li><a href="#layanan" onclick="closeMobileMenu()"
+            class="block text-white/90 text-lg py-4 border-b border-white/5 hover:text-gold transition-colors">Layanan</a>
+        </li>
+        <li><a href="#artikel" onclick="closeMobileMenu()"
+            class="block text-white/90 text-lg py-4 border-b border-white/5 hover:text-gold transition-colors">Artikel</a>
+        </li>
+        <li><a href="#kontak" onclick="closeMobileMenu()"
+            class="block text-white/90 text-lg py-4 border-b border-white/5 hover:text-gold transition-colors">Kontak</a>
+        </li>
+      </ul>
+      <a href="#kontak" onclick="closeMobileMenu()"
+        class="mt-6 flex items-center justify-center gap-2 bg-gold hover:bg-gold-light transition-colors text-navy-900 font-bold text-[17px] w-full py-4 rounded-md">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-5 h-5">
+          <path
+            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Konsultasi Sekarang
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="beranda" class="relative overflow-hidden bg-navy-900">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <img src="../asset/office-bg-hero.webp" alt="" aria-hidden="true"
+        class="w-full h-full object-cover object-center">
+      <div class="absolute inset-0"
+        style="background: linear-gradient(to right, rgba(10,26,51,1) 0%, rgba(10,26,51,0.92) 30%, rgba(10,26,51,0.6) 60%, rgba(10,26,51,0.3) 80%, rgba(10,26,51,0.15) 100%);">
+      </div>
+    </div>
+    <div
+      class="relative z-10 max-w-[1800px] mx-auto px-6 md:px-10 pt-12 md:pt-16 pb-14 grid lg:grid-cols-2 gap-12 items-end">
+      <div>
+        <p class="text-gold text-sm md:text-[15px] font-semibold tracking-wide flex items-center gap-2 flex-wrap">
+          <span>Profesional</span>
+          <span class="w-1 h-1 rounded-full bg-gold inline-block"></span>
+          <span>Terpercaya</span>
+          <span class="w-1 h-1 rounded-full bg-gold inline-block"></span>
+          <span>Berintegritas</span>
+        </p>
+        <h1 class="mt-5 font-serif text-white text-[2.6rem] leading-[1.1] sm:text-5xl md:text-[3.4rem]">
+          Notaris, NPAK &amp; PPAT<br>
+          <span class="italic text-white">Mila Kumari, S.H., M.Kn.</span>
+        </h1>
+        <div class="w-16 h-[3px] bg-gold my-6"></div>
+        <h2 class="text-white text-xl md:text-2xl font-bold leading-snug">
+          Solusi Tepat untuk Kebutuhan<br class="hidden sm:block"> Hukum Anda
+        </h2>
+        <p class="mt-5 text-white/60 text-[15px] md:text-base leading-relaxed max-w-xl">
+          Dengan pengalaman lebih dari 15 tahun, kami memberikan layanan kenotariatan dan pertanahan dengan standar
+          profesionalisme tinggi, integritas, serta kepatuhan penuh terhadap peraturan perundang-undangan.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#kontak"
+            class="inline-flex items-center gap-2 bg-gold hover:bg-gold-light transition-colors text-navy-900 font-semibold px-6 py-3.5 rounded-md">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-4 h-4">
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Konsultasi Sekarang
+          </a>
+          <a href="#kontak"
+            class="inline-flex items-center gap-2 border border-gold text-white hover:bg-white/5 transition-colors font-semibold px-6 py-3.5 rounded-md">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-4 h-4 text-gold">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Hubungi Kami
+          </a>
+        </div>
+      </div>
+      <div aria-hidden="true" class="hidden lg:block"></div>
+    </div>
+    <div class="absolute bottom-[-30px] right-56 lg:right-12 z-[8] pointer-events-none hidden lg:block"
+      style="width: 48%; max-width: 430px; min-width: 280px;">
+      <img src="../asset/ibu-nobg.webp" alt="Notaris Mila Kumari, S.H., M.Kn."
+        class="w-full h-auto object-contain object-bottom drop-shadow-ibu" style="display: block;">
+    </div>
+  </section>
+
+  <!-- FEATURE STRIP -->
+  <div class="relative z-10 px-4 md:px-8 pt-10 mt-10 md:mt-0">
+    <div
+      class="max-w-[1400px] mx-auto bg-[#001B39] rounded-2xl grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/20 shadow-[0_10px_40px_rgba(0,0,0,0.3)]">
+      <div class="flex flex-col items-center text-center px-6 py-6">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+          class="w-[60px] h-[60px] text-gold mb-1">
+          <path
+            d="M8 12 3 7l3-3 5 3M16 12l5-5-3-3-5 3M8 12l2.5 2.5a1.5 1.5 0 0 0 2.12 0v0a1.5 1.5 0 0 0 0-2.12L11 10M16 12l-2.5 2.5a1.5 1.5 0 0 1-2.12 0"
+            stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M6 7l4.5 4.5M18 7l-4.5 4.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <h3 class="text-gold font-serif font-bold text-[22px] mb-1">Berpengalaman</h3>
+        <p class="text-white/90 text-[15px] leading-tight max-w-[240px]">Lebih dari 15 tahun melayani ribuan klien</p>
+      </div>
+      <div class="flex flex-col items-center text-center px-6 py-6">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+          class="w-[60px] h-[60px] text-gold mb-1">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <h3 class="text-gold font-serif font-bold text-[22px] mb-1">Terpercaya</h3>
+        <p class="text-white/90 text-[15px] leading-tight max-w-[240px]">Dipercaya oleh individu, UMKM hingga perusahaan
+          besar</p>
+      </div>
+      <div class="flex flex-col items-center text-center px-6 py-6">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+          class="w-[60px] h-[60px] text-gold mb-1">
+          <path d="M12 3v18M8 21h8M5 7h14M5 7l-3 6a3 3 0 0 0 6 0l-3-6zM19 7l-3 6a3 3 0 0 0 6 0l-3-6z"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <h3 class="text-gold font-serif font-bold text-[22px] mb-1">Profesional</h3>
+        <p class="text-white/90 text-[15px] leading-tight max-w-[240px]">Standar layanan tinggi dan tepat waktu</p>
+      </div>
+      <div class="flex flex-col items-center text-center px-6 py-6">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+          class="w-[60px] h-[60px] text-gold mb-1">
+          <path d="M3 10h18M4 10v9m4-9v9m4-9v9m4-9v9m4-9v9M2 21h20M12 2l9 5H3l9-5z" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <h3 class="text-gold font-serif font-bold text-[22px] mb-1">Berintegritas</h3>
+        <p class="text-white/90 text-[15px] leading-tight max-w-[240px]">Jujur, amanah dan bertanggung jawab</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TENTANG — Hero Part -->
+  <section id="tentang" class="relative overflow-hidden mt-10">
+    <div class="absolute right-0 h-full max-w-[700px] z-0 pointer-events-none">
+      <img src="../asset/side-about.webp" alt="" aria-hidden="true" class="w-full h-full object-cover object-center">
+      <div class="absolute inset-0"
+        style="background: linear-gradient(to right, rgba(255,255,255) 0%, rgba(255,255,255,0) 40%, rgba(255, 255, 255, 0) 100%);">
+      </div>
+    </div>
+    <div class="relative z-10 max-w-[1800px] mx-auto px-6 md:px-10 pt-12 md:pt-16 pb-14 grid lg:grid-cols-2 items-end">
+      <div>
+        <h2 class="font-serif text-3xl md:text-[2.0rem] text-navy-900">
+          Tentang <span class="text-gold">Mila Kumari, S.H., M.Kn.</span>
+        </h2>
+        <p class="mt-6 text-[15px] md:text-base leading-relaxed text-navy-900/80">
+          <span class="font-bold">Mila Kumari, S.H., M.Kn.</span> adalah Notaris dan PPAT dengan pengalaman lebih dari
+          15 tahun, yang telah melayani lebih dari 8.000 klien di wilayah Bandung Barat dan sekitarnya.
+        </p>
+        <p class="mt-4 text-[15px] md:text-base leading-relaxed text-navy-900/80">
+          Layanan mencakup pembuatan akta notaris, pengurusan dan peralihan hak atas tanah, serta pendirian dan
+          perubahan badan hukum bagi berbagai segmen, mulai dari UMKM hingga perusahaan besar.
+        </p>
+        <div class="mt-8 flex items-center gap-4 text-navy-900">
+          <span class="h-px w-10 bg-gold"></span>
+          <span class="font-serif italic text-lg md:text-xl">&quot;Trusted, Accountable &amp; Professional&quot;</span>
+          <span class="h-px w-10 bg-gold"></span>
+        </div>
+      </div>
+      <div aria-hidden="true" class="hidden lg:block"></div>
+    </div>
+  </section>
+
+  <!-- TENTANG — Info Cards -->
+  <section class="bg-cream pb-12">
+    <div class="max-w-[1800px] mx-auto px-6 md:px-10">
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+
+        <!-- Pendidikan -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-gold">
+          <div class="bg-navy-900 flex items-center gap-2.5 px-5 py-4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-10 h-10 text-gold">
+              <path d="M2 9l10-5 10 5-10 5-10-5z" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5M22 9v6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="text-white font-bold text-sm tracking-wide">PENDIDIKAN</span>
+          </div>
+          <div class="p-5 flex flex-col gap-5">
+            <div class="flex gap-3">
+              <span
+                class="shrink-0 w-6 h-6 rounded-full bg-navy-900 text-white text-xs font-bold flex items-center justify-center mt-0.5">1</span>
+              <div>
+                <p class="font-bold text-navy-900 text-[15px]">Sarjana Hukum (S.H)</p>
+                <p class="text-navy-900/60 text-sm mt-0.5 leading-snug">Fakultas Hukum Universitas Hasanuddin, Makasar
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <span
+                class="shrink-0 w-6 h-6 rounded-full bg-navy-900 text-white text-xs font-bold flex items-center justify-center mt-0.5">2</span>
+              <div>
+                <p class="font-bold text-navy-900 text-[15px]">Magister Kenotariatan (M.Kn)</p>
+                <p class="text-navy-900/60 text-sm mt-0.5 leading-snug">Pascasarjana Universitas Padjajaran, Bandung</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sertifikasi -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-gold">
+          <div class="bg-navy-900 flex items-center gap-2.5 px-5 py-4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-10 h-10 text-gold">
+              <circle cx="12" cy="8" r="6" />
+              <path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="text-white font-bold text-sm tracking-wide">SERTIFIKASI KHUSUS</span>
+          </div>
+          <div class="p-5 flex flex-col gap-5">
+            <div class="flex gap-3 items-center">
+              <span
+                class="shrink-0 w-6 h-6 rounded-full bg-navy-900 text-white text-xs font-bold flex items-center justify-center">1</span>
+              <p class="font-bold text-navy-900 text-[15px]">Notaris Syariah</p>
+            </div>
+            <div class="flex gap-3 items-center">
+              <span
+                class="shrink-0 w-6 h-6 rounded-full bg-navy-900 text-white text-xs font-bold flex items-center justify-center">2</span>
+              <p class="font-bold text-navy-900 text-[15px]">Notaris Koperasi</p>
+            </div>
+            <div class="flex gap-3 items-center">
+              <span
+                class="shrink-0 w-6 h-6 rounded-full bg-navy-900 text-white text-xs font-bold flex items-center justify-center">3</span>
+              <p class="font-bold text-navy-900 text-[15px]">Notaris Pasar Modal</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Legalitas -->
+        <div class="bg-white rounded-lg overflow-hidden shadow-sm border border-gold">
+          <div class="bg-navy-900 flex items-center gap-2.5 px-5 py-4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-10 h-10 text-gold">
+              <path
+                d="M12 2l2.4 1.2 2.6-.4 1.3 2.3 2.3 1.3-.4 2.6L21.4 12l-1.2 2.4.4 2.6-2.3 1.3-1.3 2.3-2.6-.4L12 21.4l-2.4-1.2-2.6.4-1.3-2.3-2.3-1.3.4-2.6L2.6 12l1.2-2.4-.4-2.6 2.3-1.3 1.3-2.3 2.6.4L12 2z"
+                stroke-linejoin="round" />
+              <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="text-white font-bold text-sm tracking-wide">LEGALITAS JABATAN</span>
+          </div>
+          <div class="p-5 flex flex-col gap-5">
+            <div class="flex gap-3">
+              <span
+                class="shrink-0 w-6 h-6 rounded-full bg-navy-900 text-white text-xs font-bold flex items-center justify-center mt-0.5">1</span>
+              <div>
+                <p class="font-bold text-navy-900 text-[15px]">Notaris</p>
+                <p class="text-navy-900/60 text-sm mt-0.5 leading-snug">berdasarkan Surat Keputusan Menteri Hukum &amp;
+                  Hak Asasi Manusia Republik Indonesia</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <span
+                class="shrink-0 w-6 h-6 rounded-full bg-navy-900 text-white text-xs font-bold flex items-center justify-center mt-0.5">2</span>
+              <div>
+                <p class="font-bold text-navy-900 text-[15px]">Pejabat Pembuat Akta Tanah (PPAT)</p>
+                <p class="text-navy-900/60 text-sm mt-0.5 leading-snug">berdasarkan Surat Keputusan Menteri ATR/Kepala
+                  Badan Pertanahan Republik Indonesia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYANAN KAMI -->
+  <section id="layanan" class="bg-navy-900 py-4">
+    <div class="max-w-[1800px] mx-auto pl-6 md:pl-10 flex flex-col lg:flex-row lg:items-center gap-10">
+      <h2 class="font-serif text-gold text-3xl md:text-4xl leading-tight shrink-0">Layanan Kami</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-1 flex-1">
+        <div class="flex flex-col gap-1 px-2 items-center justify-center border-l border-gold">
+          <span class="w-12 h-12 flex items-center justify-center">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-9 h-9 text-gold">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M14 2v6h6M8 13h8M8 17h8M8 9h2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <p class="text-center text-white font-normal text-[15px] leading-tight">Pembuatan Akta Notaris</p>
+        </div>
+        <div class="flex flex-col gap-1 px-2 items-center justify-center border-l border-gold">
+          <span class="w-12 h-12 flex items-center justify-center">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-9 h-9 text-gold">
+              <path d="M3 11.5 12 4l9 7.5M5 10v10h14V10" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M9 20v-6h6v6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <p class="text-center text-white font-normal text-[15px] leading-tight">Peralihan &amp; Pengurusan Hak Tanah
+          </p>
+        </div>
+        <div class="flex flex-col gap-1 px-2 items-center justify-center border-l border-gold">
+          <span class="w-12 h-12 flex items-center justify-center">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-9 h-9 text-gold">
+              <path d="M4 21V6l8-4 8 4v15M4 21h16M9 9h1M9 13h1M14 9h1M14 13h1M10 21v-4h4v4" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+          <p class="text-center text-white font-normal text-[15px] leading-tight">Pendirian &amp; Perubahan Badan Hukum
+          </p>
+        </div>
+        <div class="flex flex-col gap-1 px-2 items-center justify-center border-l border-gold">
+          <span class="w-12 h-12 flex items-center justify-center">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-9 h-9 text-gold">
+              <path d="M3 4h18M4 4v10h16V4M12 14v6M9 20h6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <p class="text-center text-white font-normal text-[15px] leading-tight">Layanan Hukum Lainnya</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="kontak" class="bg-navy-950 pt-14 pb-8">
+    <div class="max-w-[1800px] mx-auto px-6 md:px-10 grid md:grid-cols-3 gap-10">
+      <div class="flex gap-3">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+          class="w-5 h-5 text-gold shrink-0 mt-1">
+          <path d="M12 22s7-6.4 7-12A7 7 0 0 0 5 10c0 5.6 7 12 7 12z" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="12" cy="10" r="2.4" />
+        </svg>
+        <div class="text-sm">
+          <p class="text-white/60">Kantor Notaris, NPAK &amp; PPAT</p>
+          <p class="text-white font-bold mt-0.5">Mila Kumari, S.H., M.Kn.</p>
+          <p class="text-white/60 mt-0.5">Bandung Barat, Jawa Barat</p>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+          class="w-5 h-5 text-gold shrink-0 mt-1">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <div class="text-sm">
+          <p class="text-white/60 mb-2">Hubungi Kami</p>
+          <p class="text-white flex items-center gap-2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-4 h-4 text-gold">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            0811 1234 5678
+          </p>
+          <p class="text-white flex items-center gap-2 mt-1.5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4 text-gold">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            info@notarismilakumari.id
+          </p>
+        </div>
+      </div>
+      <div>
+        <p class="text-white font-bold mb-3">Ikuti Kami</p>
+        <div class="flex gap-3">
+          <a href="#"
+            class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold hover:text-navy-900 transition-colors flex items-center justify-center text-white">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a href="#"
+            class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold hover:text-navy-900 transition-colors flex items-center justify-center text-white">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4">
+              <path d="M15 8h2V4h-2a4 4 0 0 0-4 4v2H9v4h2v8h4v-8h2.5l.5-4H15V8z" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="#"
+            class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold hover:text-navy-900 transition-colors flex items-center justify-center text-white">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4">
+              <rect x="3" y="3" width="18" height="18" rx="3" />
+              <path d="M7.5 10v6M7.5 7.5v.01M12 16v-3.5c0-1.5 1-2.5 2.5-2.5S17 11 17 12.5V16" stroke-linecap="round" />
+            </svg>
+          </a>
+          <a href="#"
+            class="w-9 h-9 rounded-full bg-white/10 hover:bg-gold hover:text-navy-900 transition-colors flex items-center justify-center text-white">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" class="w-4 h-4">
+              <rect x="2.5" y="6" width="19" height="12" rx="3" />
+              <path d="M10.5 9.5v5l4.5-2.5-4.5-2.5z" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="max-w-[1800px] mx-auto px-6 md:px-10 mt-10 pt-6 border-t border-white/10 text-white/40 text-xs text-center">
+      &copy; <span id="footerYear"></span> Kantor Notaris, NPAK &amp; PPAT Mila Kumari, S.H., M.Kn. Seluruh hak cipta
+      dilindungi.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const iconHamburger = document.getElementById('iconHamburger');
+    const iconClose = document.getElementById('iconClose');
+    let menuOpen = false;
+    mobileMenuBtn.addEventListener('click', function () {
+      menuOpen = !menuOpen;
+      if (menuOpen) {
+        mobileMenu.classList.remove('hidden');
+        iconHamburger.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+        mobileMenuBtn.setAttribute('aria-label', 'Tutup menu');
+      } else {
+        mobileMenu.classList.add('hidden');
+        iconHamburger.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-label', 'Buka menu');
+      }
+    });
+    function closeMobileMenu() {
+      menuOpen = false;
+      mobileMenu.classList.add('hidden');
+      iconHamburger.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      mobileMenuBtn.setAttribute('aria-label', 'Buka menu');
+    }
+  </script>
+</body>
+
+</html>

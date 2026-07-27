@@ -183,8 +183,6 @@ body.article-page main {
 }
 
 .nav-logo img {
-  width: 46px;
-  height: 46px;
   object-fit: contain;
   border-radius: 6px;
   filter: drop-shadow(0 2px 8px rgba(201, 168, 76, 0.3));
@@ -197,16 +195,16 @@ body.article-page main {
 }
 
 .nav-logo-text .line1 {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   color: var(--gold);
   text-transform: uppercase;
 }
 
 .nav-logo-text .line2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 19px;
+  font-size: 24px;
   font-weight: 600;
   color: white;
   letter-spacing: 0.02em;
@@ -1905,7 +1903,7 @@ body.article-page main {
 .loaded {
   opacity: 1;
   transform: translateY(0);
-  background: linear-gradient(180deg, #14315c 0%, #1a3f70 35%, #6b93bf 72%, #ddeaf6 100%)
+  background: white;
 }
 
 /* CTA */
