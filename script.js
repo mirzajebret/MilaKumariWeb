@@ -110,7 +110,13 @@ window.loadPage = async function (pageId) {
     main.innerHTML = html;
     currentPage = pageId;
 
+    // Update body class to reflect current page (for CSS theming)
+    document.body.className = document.body.className
+      .replace(/\bpage-\S+/g, '').trim();
+    document.body.classList.add(`page-${pageId}`);
+
     closeMobileMenu();
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // Update navbar state for new page

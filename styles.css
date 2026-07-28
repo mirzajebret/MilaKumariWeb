@@ -128,6 +128,120 @@ body.article-page main {
   min-height: 60vh;
 }
 
+/* ============================================================
+   NON-HOME PAGE DARK THEMING
+   Berlaku untuk semua halaman selain home
+   ============================================================ */
+
+/* Semua halaman non-home: background navy gelap */
+body:not(.page-home) #mainContent {
+  background: var(--navy);
+  min-height: 70vh;
+}
+
+/* Override Tailwind bg-white / bg-gradient di galeri, artikel, lainnya */
+body.page-galeri #mainContent > section,
+body.page-artikel #mainContent > section,
+body.page-lainnya #mainContent > section {
+  background: var(--navy) !important;
+}
+
+/* Teks di halaman galeri/artikel yang pakai text-gray-800 / text-gray-600 
+   di dalam bg putih — override card background agar gelap */
+body.page-lainnya .bg-white {
+  background: var(--navy-3) !important;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+}
+body.page-lainnya .text-gray-800 {
+  color: var(--cream) !important;
+}
+body.page-lainnya .text-gray-600 {
+  color: rgba(253, 250, 244, 0.72) !important;
+}
+body.page-lainnya .bg-krem-100 {
+  background: rgba(201, 168, 76, 0.15) !important;
+}
+body.page-lainnya .text-krem-600,
+body.page-lainnya .text-gray-500 {
+  color: var(--gold-light) !important;
+}
+
+/* artikel.html cards */
+body.page-artikel .bg-white {
+  background: var(--navy-3) !important;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+}
+body.page-artikel .text-gray-800 {
+  color: var(--cream) !important;
+}
+body.page-artikel .text-gray-600,
+body.page-artikel .text-gray-500,
+body.page-artikel .text-gray-400 {
+  color: rgba(253, 250, 244, 0.65) !important;
+}
+body.page-artikel .text-gray-700 {
+  color: rgba(253, 250, 244, 0.85) !important;
+}
+
+/* Page Hero — dipakai di notaris.html dan ppat.html */
+.page-hero {
+  background: linear-gradient(135deg, var(--navy-4) 0%, var(--navy-3) 60%, #1a3060 100%);
+  padding: calc(var(--navbar-h) + 3rem) 0 3.5rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.page-hero-breadcrumb {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(253, 250, 244, 0.5);
+  margin-bottom: 1rem;
+}
+
+.page-hero-breadcrumb span {
+  color: var(--gold);
+}
+
+.page-hero h1 {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.page-hero p {
+  color: rgba(253, 250, 244, 0.75);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 580px;
+}
+
+/* Section di notaris/ppat — warna cream tetap oke karena kontennya gelap */
+body.page-notaris .section,
+body.page-ppat .section {
+  background: var(--cream) !important;
+}
+
+
 /* NAVIGATION */
 .navbar {
   position: fixed;
